@@ -1,21 +1,52 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charste='utf-8'>
-		<link rel='stylesheet' type='text/css' href='/css/style.css'>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-		<script src="/socket.io/socket.io.js"></script>
-		<!--
-		<script>
-			const socket = io();
-			console.log(socket);
-		</script>
-		-->
-		<script type='text/babel' src='/js/chat.js'></script>
-	</head>
-	<body>
-		{% block content %}
+		<meta charset='utf-8'>
+		<link rel="stylesheet" type="text/css" href="/css/style.css">
+		{% if addCss %}
+		{% for css in addCss %}
+		<link rel="stylesheet" type="text/css" href="/css/{{ css }}.css">
+		{% endfor %}
+		{% endif %}
+		{% block style %}
 		{% endblock %}
+		<script src='https://unpkg.com/@babel/standalone/babel.min.js'></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script type='text/babel' src='/js/common.js'></script>
+		{% if addScript %}
+		{% for script in addScript %}
+		<script type='text/babel' src='/js/{{ script }}.js'></script>
+		{% endfor %}
+		{% endif %}
+		{% block script %}
+		{% endblock %}
+		<title>{% if pageTitle %}{{ pageTitle }} - {% endif %} FIFA ONLINE 4 GG</title>
+	</head>
+	<body{%if bodyClass %} class="body_{{ bodyClass }}"{% endif %}>
+	<header class='header'>
+	{% block header %}
+	{% include "outline/header/_main.html" %}
+	{% endblock %}
+	</header>
+	
+	<nav class='layout_width'>
+	{% block mainMenu %}
+	{% include "menu/_main.html" %}
+	{% endblock %}
+	</nav>
+	
+	<main id='main_wrap' class=''>
+	<div class='layout_width'>
+	{% block content %}
+	{% endblock %}
+	</div>
+	</main>
+	
+	<footer class='footer'>
+	{% block footer %}
+	{% include "outline/footer/_main.html" %}
+	{% endblock %}
+	</footer>
+	<iframe name='ifrmHidden' width='100%' height='500' frameborder='0'></iframe>
 	</body>
 </html>

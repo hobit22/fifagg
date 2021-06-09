@@ -3,6 +3,7 @@ const nunjucks = require('nunjucks');
 const morgan = require('morgan');
 const path = require('path');
 const request = require('request');
+const { sequelize } = require('./models');
 const app = express();
 
 
@@ -18,15 +19,31 @@ nunjucks.configure('views', {
 	watch : true,
 });
 
+
+/** 데이터베이스 연결 */
+sequelize.sync({ force : false})
+	.then(() => {
+		console.log('db연결 성공');
+	})
+	.catch((err) => {
+		console.error(err);
+	});
+
+if (process.env.NODE_ENV == 'production') {
+	app.use(morgan('combined'));
+} else {
+	app.use(morgan('dev'));
+}
+
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended : false }));
 
-//app.use("/user", userRouter);
+
 app.use(indexRouter); // "/" 기본 URL 생략 가능
-const url = `https://api.nexon.co.kr/fifaonline4/v1.0/users?nickname=Hyogod`;
+//app.use("/user", userRouter);
 
 /** 없는 페이지 미들웨어 */
 app.use((req,res,next)=>{
