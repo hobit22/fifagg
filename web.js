@@ -3,7 +3,7 @@ const nunjucks = require('nunjucks');
 const morgan = require('morgan');
 const path = require('path');
 const request = require('request');
-//const { sequelize } = require('./models');
+const { sequelize } = require('./models');
 const app = express();
 
 
