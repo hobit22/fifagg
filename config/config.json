@@ -1,23 +1,23 @@
 {
   "development": {
-    "username": "hobit2404",
-    "password": "Enddlxhfl",
-    "database": "hobit2404",
-    "host": "nodejs-009.cafe24.com",
+    "username": "root",
+    "password": "123456",
+    "database": "kanban",
+    "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
-    "username": "hobit2404",
-    "password": "Enddlxhfl",
-    "database": "hobit2404",
-    "host": "nodejs-009.cafe24.com",
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
-    "username": "hobit2404",
-    "password": "Enddlxhfl",
-    "database": "hobit2404",
-    "host": "nodejs-009.cafe24.com",
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
     "dialect": "mysql"
   }
 }

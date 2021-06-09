@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "nodemon web",
     "start": "node web.js",
-    "stop": "pm2 kill"
+    "stop": "pm2 kill",
+	"test": "node --trace-deprecation web"
   },
   "author": "",
   "license": "ISC",
