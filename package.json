@@ -22,8 +22,8 @@
     "nunjucks": "^3.2.3",
     "pm2": "^5.0.4",
     "request": "^2.88.2",
-    "sequelize": "^6.1.0",
-    "sequelize-cli": "^6.0.0",
+    "sequelize": "^6.6.2",
+    "sequelize-cli": "^6.2.0",
     "winston": "^3.3.3"
   },
   "devDependencies": {
