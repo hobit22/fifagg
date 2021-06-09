@@ -3,7 +3,7 @@ const nunjucks = require('nunjucks');
 const morgan = require('morgan');
 const path = require('path');
 const request = require('request');
-const { sequelize } = require('./models');
+//const { sequelize } = require('./models');
 const app = express();
 
 
@@ -21,6 +21,7 @@ nunjucks.configure('/home/hosting_users/hobit2404/apps/hobit2404@fifagg.cafe24ap
 
 
 /** 데이터베이스 연결 */
+/*
 sequelize.sync({ force : false})
 	.then(() => {
 		console.log('db연결 성공');
@@ -28,7 +29,7 @@ sequelize.sync({ force : false})
 	.catch((err) => {
 		console.error(err);
 	});
-
+*/
 if (process.env.NODE_ENV == 'production') {
 	app.use(morgan('combined'));
 } else {
