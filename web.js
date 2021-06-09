@@ -30,6 +30,7 @@ sequelize.sync({ force : false})
 		logger(`데이터베이스 연결 성공`);
 	})
 	.catch((err) => {
+		logger("db 에러 발생", 'error');
 		logger(err.message, 'error');
 		logger(err.stack, 'error');
 	});

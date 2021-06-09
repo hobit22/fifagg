@@ -7,7 +7,7 @@
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
+    "username": "hobit2404",
     "password": "Enddlxhfl",
     "database": "hobit2404",
     "host": "nodejs-009.cafe24.com",
