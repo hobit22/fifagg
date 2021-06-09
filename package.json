@@ -2,20 +2,24 @@
   "name": "fifagg",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "web.js",
   "scripts": {
-    "start": "nodemon app"
+    "dev": "nodemon app",
+    "start": "cross-env NODE_ENV=production pm2 start web.js",
+	"stop": "pm2 kill"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
     "body-parser": "^1.19.0",
+    "cross-env": "^7.0.3",
     "express": "^4.17.1",
     "morgan": "^1.10.0",
     "mysql2": "^2.2.5",
     "nunjucks": "^3.2.3",
-    "request": "^2.88.2",
+    "pm2": "^5.0.4",
+    "request": "^2.88.2", 
     "sequelize": "^6.6.2",
     "sequelize-cli": "^6.2.0"
   },
