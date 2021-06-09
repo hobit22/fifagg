@@ -3,6 +3,8 @@ const nunjucks = require('nunjucks');
 const morgan = require('morgan');
 const path = require('path');
 const request = require('request');
+const logger = require("./lib/logger");
+const dotenv = require('dotenv');
 const { sequelize } = require('./models');
 const app = express();
 
@@ -10,6 +12,7 @@ const app = express();
 /** 라우터 */
 const indexRouter = require('./routes');
 //const userRouter = require("./routes/user");
+dotenv.config();
 
 
 app.set('port', 8001);
@@ -24,10 +27,11 @@ nunjucks.configure('/home/hosting_users/hobit2404/apps/hobit2404@fifagg.cafe24ap
 
 sequelize.sync({ force : false})
 	.then(() => {
-		console.log('db연결 성공');
+		logger(`데이터베이스 연결 성공`);
 	})
 	.catch((err) => {
-		console.error(err);
+		logger(err.message, 'error');
+		logger(err.stack, 'error');
 	});
 
 if (process.env.NODE_ENV == 'production') {
@@ -55,10 +59,17 @@ app.use((req,res,next)=>{
 
 /** 오류처리 미들웨어 */
 app.use((err,req,res,next)=>{
-	err.status = err.status || 500;
-	res.locals.error = err;	
-	console.error(err);
-	res.status(err.status).render('error');
+	
+	err.status = err.status || 500; 
+	const message = `${err.status} ${err.message}`;
+	logger(message, 'error'); //로그에 에러 기록
+	
+	logger(err.stack, 'error'); //로그에 스택 기록	
+	
+	if(process.env.NODE_ENV == 'production') err.stack = {}; // production 일때 stack 출력 안되게 처리
+	
+	res.locals.error = err;
+	res.status(err.status).render('error'); //에러 페이지 출력
 });
 
 app.listen(3000, () =>{
