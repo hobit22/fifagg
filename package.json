@@ -4,7 +4,7 @@
   "description": "",
   "main": "web.js",
   "scripts": {
-    "dev": "nodemon app",
+    "dev": "nodemon web",
     "start": "cross-env NODE_ENV=production pm2 start web.js",
 	"stop": "pm2 kill"
   },
