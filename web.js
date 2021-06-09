@@ -14,7 +14,7 @@ const indexRouter = require('./routes');
 
 app.set('port', 8001);
 app.set('view engine', 'html');
-nunjucks.configure('/home/hosting_users/hobit2404/apps/fifagg/views', {
+nunjucks.configure('/home/hosting_users/hobit2404/apps/hobit2404@fifagg.cafe24app.com:hobit2404_fifagg/views', {
 	express : app,
 	watch : true,
 });
