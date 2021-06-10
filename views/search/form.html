@@ -47,13 +47,20 @@
 </div>
 {% if simpledata.length != 0 %}
 	{% for data in simpledata %}
-		<div class='match_summary'>
+		<div class='match_summary {% if data.result == "승"%} win {% else %}lose{% endif %}'>
 			<div class='match_result'>{{data.result}}</div>
-			<div>
-				<span>{{data.team1.nickname}}</span>
-				<span>{{data.team1.goal}}</span>
-				<span>{{data.team2.goal}}</span>
-				<span>{{data.team2.nickname}}</span>
+			<div class='match'>
+				<div class='match_desc'>
+				<div class='team hometeam'>					
+					<span class='box goal'>{{data.team1.goal}}</span>
+					<span class='box nickname'>{{data.team1.nickname}}</span>
+				</div>
+				<div class='team awayteam'>
+					<span class='box goal'>{{data.team2.goal}}</span>
+					<span class='box nickname'>{{data.team2.nickname}}</span>
+					
+				</div>
+				</div>
 			</div>
 		</div>
 	{% endfor %}
