@@ -69,6 +69,6 @@ app.use((err,req,res,next)=>{
 	res.status(err.status).render('error'); //에러 페이지 출력
 });
 
-app.listen(3000, () =>{
+app.listen(8001, () =>{
 	console.log(app.get('port'), "번 포트에서 서버 대기중");
 });
