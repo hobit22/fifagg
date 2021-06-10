@@ -15,13 +15,7 @@ dotenv.config();
 app.set('port', 8001);
 app.set('view engine', 'html');
 
-let _path ='';
-if( process.env.NODE_ENV == 'production' ){
-	_path = process.env.ABSPATH;
-}
-
-//console.log(_path);
-
+console.log('NODE_ENV = ', process.env.NODE_ENV);
 nunjucks.configure( path.join(__dirname,  'views' ) , {
 	express : app,
 	watch : true,
