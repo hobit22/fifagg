@@ -30,6 +30,7 @@ router.get('/user', async (req,res,next) =>{
 		data.maxdivision[i].division = await changeData.toDivision(data.maxdivision[i].division);
 	}
 	console.log(data);
+	logger(data);
 	
 	return res.render('search/form', data);
 });
