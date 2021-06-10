@@ -22,30 +22,5 @@ router.get('/user', async (req,res,next) =>{
 	
 	return res.render('search/form', data);
 });
-/*
-router.route('/search')
-		.get((req, res, next) => {
-			
-			
-			res.send('');
-		})
-		
-		.post(async (req, res, next) => {
-			let userData = await user.searchNm(req.body.nickname);
-			//console.log(userData);
-			const accessId = userData.accessId;
-			const maxdivision = await user.maxdivision(accessId);
-			const data = {
-				userData : userData,
-				maxdivision : maxdivision,
-			};
-			
-			console.log(data);
-			
-			const url = "/user?Id="+req.body.nickname;
-			
-			//return res.send("<script>location.href='/user';</script>");
-			return go(url, res , "parent");
-		})
-*/
+
 module.exports = router;	

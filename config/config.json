@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
+    "username": "hobit2404",
     "password": "123456",
-    "database": "fifadb",
-    "host": "127.0.0.1",
+    "database": "hobit2404",
+    "host": "localhost",
     "dialect": "mysql"
   },
   "test": {

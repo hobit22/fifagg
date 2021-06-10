@@ -2,7 +2,6 @@ const express= require('express');
 const nunjucks = require('nunjucks');
 const morgan = require('morgan');
 const path = require('path');
-const request = require('request');
 const logger = require("./lib/logger");
 const dotenv = require('dotenv');
 const { sequelize } = require('./models');
@@ -11,12 +10,19 @@ const app = express();
 
 /** 라우터 */
 const indexRouter = require('./routes');
-//const userRouter = require("./routes/user");
 dotenv.config();
 
 app.set('port', 8001);
 app.set('view engine', 'html');
-nunjucks.configure('/home/hosting_users/hobit2404/apps/hobit2404_ffgg/views', {
+
+let _path ='';
+if( process.env.NODE_ENV == 'production' ){
+	_path = process.env.ABSPATH;
+}
+
+//console.log(_path);
+
+nunjucks.configure( _path + 'views', {
 	express : app,
 	watch : true,
 });
