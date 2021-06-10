@@ -1,5 +1,6 @@
 const express = require('express');
 const user = require('../models/user');
+const getData = require('../models/getData');
 const router = express.Router();
 const { alert, go } = require('../lib/common');
 
@@ -21,6 +22,12 @@ router.get('/user', async (req,res,next) =>{
 	};
 	
 	return res.render('search/form', data);
+});
+
+router.get('/getData', async (req,res,next) =>{
+	await getData.matchType();
+	await getData.playerData();
+	return res.redirect('/');
 });
 
 module.exports = router;	

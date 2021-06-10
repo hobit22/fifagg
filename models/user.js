@@ -1,5 +1,5 @@
 //const { sequelize, Sequelize : { QueryTypes } } = require('./index');
-//const request = require('request');
+
 const axios = require('axios');
 
 const user = {
