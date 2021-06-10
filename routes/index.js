@@ -25,8 +25,9 @@ router.get('/user', async (req,res,next) =>{
 });
 
 router.get('/getData', async (req,res,next) =>{
-	await getData.matchType();
-	await getData.playerData();
+	//await getData.matchType();
+	//await getData.playerData();
+	await getData.positionData();
 	return res.redirect('/');
 });
 

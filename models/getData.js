@@ -39,6 +39,7 @@ const getData = {
 			};
 			const response = await axios.get(url, options);
 			console.log(response.data[0]);
+			
 			for (let i = 0; i<response.data.length; i++){
 				const sql = `INSERT INTO player (playerId , playerNm) VALUES(:playerId, :playerNm)`;
 				const replacements = {
@@ -64,17 +65,19 @@ const getData = {
 			};
 			const response = await axios.get(url, options);
 			console.log(response.data[0]);
+			
 			for (let i = 0; i<response.data.length; i++){
-				const sql = `INSERT INTO player (playerId , playerNm) VALUES(:playerId, :playerNm)`;
+				const sql = `INSERT INTO position (positionId , positionDesc) VALUES(:positionId, :positionDesc)`;
 				const replacements = {
-					playerId : response.data[i].id,
-					playerNm : response.data[i].name,
+					positionId : response.data[i].spposition,
+					positionDesc : response.data[i].desc,
 				};
 				await sequelize.query(sql, {
 					replacements,
 					type: QueryTypes.INSERT,
 				});
 			}
+		
 			return true;
 		} catch(err){
 			console.error(err);

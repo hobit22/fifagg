@@ -1,9 +1,9 @@
 {
   "development": {
     "username": "hobit2404",
-    "password": "123456",
+    "password": "Enddlxhfl",
     "database": "hobit2404",
-    "host": "localhost",
+    "host": "nodejs-009.cafe24.com",
     "dialect": "mysql"
   },
   "test": {
