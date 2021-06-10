@@ -31,8 +31,8 @@ dd { display: table-cell; vertical-align: middle; padding: 10px; }
 
 
 /** 경기 결과 */
-.match_wrap { padding : 20px 0;}
-.match_summary { display: table; width: 100%; background-color: white; font-size: 15px; margin : 1px 0;} 
+.match_wrap { padding : 5px 0; margin : 5px;}
+.match_summary { display: table; width: 100%; background-color: white; font-size: 15px; margin : 3px 0;} 
 .match_summary .match_result {text-align: center; width: 150px; height: 60px; line-height: 60px;}
 .match { display: table-cell; width: 100%; vertical-align:middle;}
 .match .match_desc { display: table; width: 100%; }
