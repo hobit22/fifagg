@@ -22,7 +22,7 @@ if( process.env.NODE_ENV == 'production' ){
 
 //console.log(_path);
 
-nunjucks.configure( _path + 'views', {
+nunjucks.configure( path.join(__dirname,  'views' ) , {
 	express : app,
 	watch : true,
 });
