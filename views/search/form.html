@@ -10,6 +10,9 @@
 </form>
 
 <div class='data_wrap'>
+	{% if not userData %}
+	<div class='noData'>선수 정보가 없습니다.</div>
+	{% else %}
 	<dl>
 		<dt>accessId</dt>
 		<dd>{{ userData.accessId }}</dd>
@@ -22,7 +25,7 @@
 		<dt>레벨</dt>
 		<dd>{{ userData.level }}</dd>
 	</dl>
-	
+	{% endif %}
 	{% for data in maxdivision %}
 	<dl>
 		<dt>matchType</dt>
@@ -37,5 +40,6 @@
 		<dd>{{ data.achievementDate }}</dd>
 	</dl>
 	{% endfor %}
+	
 </div>
 {% endblock %}
