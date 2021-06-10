@@ -57,9 +57,13 @@ const changeData = {
 				nickname : response.data.matchInfo[1].nickname,
 				goal : response.data.matchInfo[1].shoot.goalTotal,
 			};	
+			
 			//console.log("team2 = " , team2);
-			let result='패';
-			if(team1.nickname == nickname) result ='승';
+			if(team1.nickname == nickname ) {
+				result = response.data.matchInfo[0].matchDetail.matchResult;
+			} else {
+				result = response.data.matchInfo[1].matchDetail.matchResult;
+			}
 			
 			const data = {
 				result : result,
