@@ -15,7 +15,7 @@ dotenv.config();
 app.set('port', 8001);
 app.set('view engine', 'html');
 
-console.log('NODE_ENV = ', process.env.NODE_ENV);
+console.log('2021 0610 올림  ');
 nunjucks.configure( path.join(__dirname,  'views' ) , {
 	express : app,
 	watch : true,
