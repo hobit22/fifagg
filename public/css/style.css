@@ -7,8 +7,8 @@ ul { list-style: none; padding:0; margin: 0; }
 dl { padding:0; margin: 0; display: table; width: 100%; }
 dt { display: table-cell; vertical-align: middle; width: 130px; padding: 10px; }
 dd { display: table-cell; vertical-align: middle; padding: 10px; }
-dn { display: none !important;}
-
+.dn { display: none !important;}
+.noData { height: 300px; text-align : center; font-size: 30px; line-height: 300px;}
 
 .layout_width { max-width: 1000px !important; margin : 0 auto !important;}
 #main_wrap { height: 1000px; background-image : url("/img/main_bg.jpg"); background-size: cover; position: relative;} 
@@ -27,4 +27,9 @@ dn { display: none !important;}
 
 .data_wrap { background-color: rgba(200,200,200,0.8);}
 
-.noData { height: 300px; text-align : center; font-size: 30px; line-height: 300px;}
+
+
+
+/** 경기 결과 */
+.match_summary { display: table-cell; width: 100%; background-color: white;} 
+.match_summary .match_result {}

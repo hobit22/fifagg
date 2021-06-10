@@ -9,7 +9,7 @@
 	<input type='submit' value='검색'>
 </form>
 
-<div class='data_wrap'>
+<div class='data_wrap userData'>
 	{% if not userData %}
 	<div class='noData'>선수 정보가 없습니다.</div>
 	{% else %}
@@ -26,20 +26,39 @@
 		<dd>{{ userData.level }}</dd>
 	</dl>
 	{% endif %}
-	{% for data in maxdivision %}
-	<dl>
-		<dt>matchType</dt>
-		<dd>{{ data.matchType }}</dd>
-	</dl>
-	<dl>
-		<dt>division</dt>
-		<dd>{{ data.division }}</dd>
-	</dl>
-	<dl>
-		<dt>date</dt>
-		<dd>{{ data.achievementDate }}</dd>
-	</dl>
-	{% endfor %}
-	
+	{% if maxdivision.length ==0 %}
+	<div class='noData'>랭크 기록이 없습니다.</div>
+	{% else %}
+		{% for data in maxdivision %}
+		<dl>
+			<dt>matchType</dt>
+			<dd>{{ data.matchType }}</dd>
+		</dl>
+		<dl>
+			<dt>division</dt>
+			<dd>{{ data.division }}</dd>
+		</dl>
+		<dl>
+			<dt>date</dt>
+			<dd>{{ data.achievementDate }}</dd>
+		</dl>
+		{% endfor %}
+	{% endif %}
 </div>
+{% if simpledata.length != 0 %}
+	{% for data in simpledata %}
+		<div class='match_summary'>
+			<div class='match_result'>{{data.result}}</div>
+			<div>
+				<span>{{data.team1.nickname}}</span>
+				<span>{{data.team1.goal}}</span>
+				<span>{{data.team2.goal}}</span>
+				<span>{{data.team2.nickname}}</span>
+			</div>
+		</div>
+	{% endfor %}
+{% endif %}
+	
+	
+
 {% endblock %}

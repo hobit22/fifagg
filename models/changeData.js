@@ -34,29 +34,40 @@ const changeData = {
 			return false;
 		} 
 	},
-	toSimpleRecord : async function(matchid){
+	/**
+		경기 기록 심플하게 내보내기
+		
+		@param matchid String 경기 고유 id
+		@param nickname String 검색한 닉네임
+		@return data json
+	*/
+	toSimpleRecord : async function(matchid, nickname){
 		try{
 			const url = "https://api.nexon.co.kr/fifaonline4/v1.0/matches/"+matchid;
 			const options = {
 				headers : { Authorization : `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50X2lkIjoiNTcwODc3NjU0IiwiYXV0aF9pZCI6IjIiLCJ0b2tlbl90eXBlIjoiQWNjZXNzVG9rZW4iLCJzZXJ2aWNlX2lkIjoiNDMwMDExNDgxIiwiWC1BcHAtUmF0ZS1MaW1pdCI6IjUwMDoxMCIsIm5iZiI6MTYyMzIxMDgxMywiZXhwIjoxNjM4NzYyODEzLCJpYXQiOjE2MjMyMTA4MTN9.FSiDuLuVXzyzsWbc6cmgtzv5yS_8NCBLmuunNXtnotQ` },
 			};
 			const response = await axios.get(url, options);
-			console.log(response.data);
-			//console.log(response.data[0]);
-			/*
-			for (let i = 0; i<response.data.length; i++){
-				const sql = `INSERT INTO rank VALUES(:rank, :name)`;
-				const replacements = {
-					rank : response.data[i].divisionId,
-					name : response.data[i].divisionName,
-				};
-				await sequelize.query(sql, {
-					replacements,
-					type: QueryTypes.INSERT,
-				});
+			const team1 = {
+				nickname : response.data.matchInfo[0].nickname,
+				goal : response.data.matchInfo[0].shoot.goalTotal,
 			}
-			*/
-			return true;
+			//console.log("team1 = " , team1);
+			const team2 = {
+				nickname : response.data.matchInfo[1].nickname,
+				goal : response.data.matchInfo[1].shoot.goalTotal,
+			};	
+			//console.log("team2 = " , team2);
+			let result='패';
+			if(team1.nickname == nickname) result ='승';
+			
+			const data = {
+				result : result,
+				team1 : team1,
+				team2 : team2,
+			}
+			
+			return data;
 			
 		}catch(err){
 			console.error(err);
