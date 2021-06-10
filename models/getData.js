@@ -64,10 +64,10 @@ const getData = {
 				
 			};
 			const response = await axios.get(url, options);
-			console.log(response.data[0]);
+			console.log(response.data[0].positionId);
 			
 			for (let i = 0; i<response.data.length; i++){
-				const sql = `INSERT INTO position (positionId , positionDesc) VALUES(:positionId, :positionDesc)`;
+				const sql = `INSERT INTO position VALUES(:positionId, :positionDesc)`;
 				const replacements = {
 					positionId : response.data[i].spposition,
 					positionDesc : response.data[i].desc,
