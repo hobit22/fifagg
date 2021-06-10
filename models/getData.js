@@ -11,7 +11,7 @@ const getData = {
 				
 			};
 			const response = await axios.get(url, options);
-			console.log(response.data[0].matchtype);
+			//console.log(response.data[0].matchtype);
 			
 			for (let i = 0; i<response.data.length; i++){
 				const sql = `INSERT INTO division (divisionId , divisionName) VALUES(:divisionId, :divisionName)`;
@@ -38,7 +38,7 @@ const getData = {
 				
 			};
 			const response = await axios.get(url, options);
-			console.log(response.data[0]);
+			//console.log(response.data[0]);
 			
 			for (let i = 0; i<response.data.length; i++){
 				const sql = `INSERT INTO player (playerId , playerNm) VALUES(:playerId, :playerNm)`;
@@ -64,7 +64,7 @@ const getData = {
 				
 			};
 			const response = await axios.get(url, options);
-			console.log(response.data[0].positionId);
+			//console.log(response.data[0].positionId);
 			
 			for (let i = 0; i<response.data.length; i++){
 				const sql = `INSERT INTO position VALUES(:positionId, :positionDesc)`;
@@ -80,6 +80,34 @@ const getData = {
 		
 			return true;
 		} catch(err){
+			console.error(err);
+			return false;
+		}
+	},
+	rankData : async function(){
+		try{
+			const url = "https://static.api.nexon.co.kr/fifaonline4/latest/division.json";
+			const options = {
+				
+			};
+			const response = await axios.get(url, options);
+			//console.log(response.data[0]);
+			
+			for (let i = 0; i<response.data.length; i++){
+				const sql = `INSERT INTO rank VALUES(:rank, :name)`;
+				const replacements = {
+					rank : response.data[i].divisionId,
+					name : response.data[i].divisionName,
+				};
+				await sequelize.query(sql, {
+					replacements,
+					type: QueryTypes.INSERT,
+				});
+			}
+			
+			return true;
+			
+		}catch(err){
 			console.error(err);
 			return false;
 		}
