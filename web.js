@@ -5,7 +5,7 @@ const path = require('path');
 const request = require('request');
 const logger = require("./lib/logger");
 const dotenv = require('dotenv');
-//const { sequelize } = require('./models');
+const { sequelize } = require('./models');
 const app = express();
 
 
@@ -23,7 +23,7 @@ nunjucks.configure('/home/hosting_users/hobit2404/apps/hobit2404_ffgg/views', {
 
 
 /** 데이터베이스 연결 */
-/*
+
 sequelize.sync({ force : false})
 	.then(() => {
 		logger(`데이터베이스 연결 성공`);
@@ -33,7 +33,7 @@ sequelize.sync({ force : false})
 		logger(err.message, 'error');
 		logger(err.stack, 'error');
 	});
-*/
+
 if (process.env.NODE_ENV == 'production') {
 	app.use(morgan('combined'));
 } else {
