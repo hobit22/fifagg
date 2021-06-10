@@ -4,6 +4,7 @@ const getData = require('../models/getData');
 const changeData = require('../models/changeData');
 const router = express.Router();
 const { alert, go } = require('../lib/common');
+const logger = require("../lib/logger");
 
 /** 메인페이지 */
 router.get('/', async (req, res, next) => {
@@ -18,19 +19,21 @@ router.get('/user', async (req,res,next) =>{
 	//console.log(userData);
 	const accessId = userData.accessId;
 	const maxdivision = await user.maxdivision(accessId);
+	const matchRecord = await user.matchData(accessId);
+	
+	console.log("record [0] = " , matchRecord[0]);
+	const simpleData = await changeData.toSimpleRecord(matchRecord[0]);
 	const data = {
 		userData : userData,
-		maxdivision : maxdivision,
+		maxdivision : maxdivision,		
 	};	
-	//console.log( data);
-	
 	
 	for( let i=0;i<data.maxdivision.length; i++){
 		data.maxdivision[i].matchType = await changeData.toMatchType(data.maxdivision[i].matchType);
 		data.maxdivision[i].division = await changeData.toDivision(data.maxdivision[i].division);
 	}
-	console.log(data);
-	logger(data);
+	//console.log(data);
+	//logger(`한글로 변환`);
 	
 	return res.render('search/form', data);
 });

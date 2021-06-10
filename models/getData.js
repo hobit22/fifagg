@@ -111,7 +111,7 @@ const getData = {
 			console.error(err);
 			return false;
 		}
-	}
+	},
 }
 
 module.exports = getData;

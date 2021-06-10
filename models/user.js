@@ -50,7 +50,7 @@ const user = {
 			};
 			const response = await axios.get(url, options);
 			
-			
+			return matchRecord = response.data;
 			
 		} catch (err){
 			console.error(err);
