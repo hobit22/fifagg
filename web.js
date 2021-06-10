@@ -15,7 +15,7 @@ dotenv.config();
 app.set('port', 8001);
 app.set('view engine', 'html');
 
-console.log('2021 0610 올림  ');
+logger("14:25");
 nunjucks.configure( path.join(__dirname,  'views' ) , {
 	express : app,
 	watch : true,
