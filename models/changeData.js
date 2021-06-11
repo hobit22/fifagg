@@ -68,9 +68,11 @@ const changeData = {
 			}
 			
 			const data = {
+				matchId : response.data.matchId,
 				result : result,
 				team1 : team1,
 				team2 : team2,
+				matchDate : response.data.matchDate,
 			}
 			
 			return data;

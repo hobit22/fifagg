@@ -38,15 +38,19 @@ background-position: center center;}
 /** 경기 결과 */
 .match_wrap { padding : 5px 0; margin : 5px;}
 .match_summary { display: table; width: 100%; background-color: white; font-size: 15px; margin : 3px 0;} 
-.match_summary .match_result {text-align: center; width: 150px; height: 60px; line-height: 60px;}
+.match_summary .match_date {text-align: center; width: 150px; height: 60px; line-height: 60px;}
 .match { display: table-cell; width: 100%; vertical-align:middle;}
-.match .match_desc { display: table; width: 100%; }
+.match .match_desc { display: table; width: 100%; position: relative;}
 .match_summary .team {display: table-cell; width: 50%; padding: 0 20px;}
+.match_summary .hometeam{ padding-right: 0;}
+.match_summary .awayteam {padding-left: 5px;}
 .match_desc .hometeam .box{float: right; padding: 10px;}
+.match_desc .depart { position: absolute; top: 10px;}
 .match_desc .awayteam .box{float: left;padding: 10px;}
 .match:after{ clear:both; display:block; content:'';}
 
 .match_summary.lose {background-color : #e2b6b3; border: 1px solid #cea7a7;}
 .match_summary.lose .match_result { border-right: 1px solid #cea7a7;}
+
 .match_summary.win {background-color : #a3cfec; border: 1px solid #cdd2d2;}
 .match_summary.win .match_result { border-right: 1px solid #cdd2d2;}

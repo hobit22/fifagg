@@ -37,7 +37,7 @@ router.get('/user', async (req,res,next) =>{
 		data.maxdivision.matchType = await changeData.toMatchType(data.maxdivision.matchType);	
 		data.maxdivision.division = await changeData.toDivision(data.maxdivision.division);	
 	}
-	//console.log(maxdivision);
+	console.log(data);
 	return res.render('search/form', data);
 });
 
