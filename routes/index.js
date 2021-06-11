@@ -49,11 +49,11 @@ router.get('/getData', async (req,res,next) =>{
 	//await getData.rankData();
 	return res.redirect('/');
 });
-
+/*
 router.get('/match' , (req,res,next)=>{
 	const data = req.query;
 	console.log(data);
 	return res.render("match/index", data);
 });
-
+*/
 module.exports = router;	

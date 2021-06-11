@@ -1,10 +1,14 @@
 const express = require('express');
+
 const router = express.Router();
 
-router.get("/match",(req,res,next) => {
-			
-			
-			return res.render("match/index");
-			//console.log(matchId);
+router.get( "/", async (req,res,next) => {
+			try{
+				const data = req.query;
+				console.log(data);
+				return res.render("match/index", data);
+			}catch(err){
+				console.error(err);
+			}
 		});
 module.exports = router;
