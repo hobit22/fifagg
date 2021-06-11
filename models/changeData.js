@@ -26,8 +26,9 @@ const changeData = {
 				type: QueryTypes.SELECT,
 			});
 			
+			//console.log(rows[0]);
 			
-			return rows[0].name;
+			return rows[0];
 			
 		}catch(err){
 			console.error(err);
@@ -48,6 +49,7 @@ const changeData = {
 				headers : { Authorization : `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50X2lkIjoiNTcwODc3NjU0IiwiYXV0aF9pZCI6IjIiLCJ0b2tlbl90eXBlIjoiQWNjZXNzVG9rZW4iLCJzZXJ2aWNlX2lkIjoiNDMwMDExNDgxIiwiWC1BcHAtUmF0ZS1MaW1pdCI6IjUwMDoxMCIsIm5iZiI6MTYyMzIxMDgxMywiZXhwIjoxNjM4NzYyODEzLCJpYXQiOjE2MjMyMTA4MTN9.FSiDuLuVXzyzsWbc6cmgtzv5yS_8NCBLmuunNXtnotQ` },
 			};
 			const response = await axios.get(url, options);
+			if(response.status != 200 ) return false;
 			const team1 = {
 				nickname : response.data.matchInfo[0].nickname,
 				goal : response.data.matchInfo[0].shoot.goalTotal,

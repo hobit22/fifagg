@@ -18,6 +18,8 @@ const user = {
 				headers : { Authorization : `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50X2lkIjoiNTcwODc3NjU0IiwiYXV0aF9pZCI6IjIiLCJ0b2tlbl90eXBlIjoiQWNjZXNzVG9rZW4iLCJzZXJ2aWNlX2lkIjoiNDMwMDExNDgxIiwiWC1BcHAtUmF0ZS1MaW1pdCI6IjUwMDoxMCIsIm5iZiI6MTYyMzIxMDgxMywiZXhwIjoxNjM4NzYyODEzLCJpYXQiOjE2MjMyMTA4MTN9.FSiDuLuVXzyzsWbc6cmgtzv5yS_8NCBLmuunNXtnotQ` },
 			};
 			const response = await axios.get(url, options);
+			if(response.status != 200 ) return false;
+			
 			const data = response.data;
 			
 			return data;
@@ -43,12 +45,25 @@ const user = {
 				headers : { Authorization : `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50X2lkIjoiNTcwODc3NjU0IiwiYXV0aF9pZCI6IjIiLCJ0b2tlbl90eXBlIjoiQWNjZXNzVG9rZW4iLCJzZXJ2aWNlX2lkIjoiNDMwMDExNDgxIiwiWC1BcHAtUmF0ZS1MaW1pdCI6IjUwMDoxMCIsIm5iZiI6MTYyMzIxMDgxMywiZXhwIjoxNjM4NzYyODEzLCJpYXQiOjE2MjMyMTA4MTN9.FSiDuLuVXzyzsWbc6cmgtzv5yS_8NCBLmuunNXtnotQ` },
 			};
 			const response = await axios.get(url, options);
-			//console.log(response.data);
+			
+			if(response.status != 200 ) return false;
+			
+			
 			const data = response.data;
+			let rankpos=0;
+			for( let i= 0; i< data.length; i++){
+				//console.log(data[i]);
+				if(data[i].matchType ==50){
+					rankpos = i;
+					break;
+				}
+			}
+			let result ={};
+			result= data[rankpos];
+			//console.log(result);
+			return result;
 			
-			return data;
-			
-		} catch(error){
+		} catch(err){
 			console.error(err);
 			return false;
 		}
@@ -69,6 +84,7 @@ const user = {
 				headers : { Authorization : `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50X2lkIjoiNTcwODc3NjU0IiwiYXV0aF9pZCI6IjIiLCJ0b2tlbl90eXBlIjoiQWNjZXNzVG9rZW4iLCJzZXJ2aWNlX2lkIjoiNDMwMDExNDgxIiwiWC1BcHAtUmF0ZS1MaW1pdCI6IjUwMDoxMCIsIm5iZiI6MTYyMzIxMDgxMywiZXhwIjoxNjM4NzYyODEzLCJpYXQiOjE2MjMyMTA4MTN9.FSiDuLuVXzyzsWbc6cmgtzv5yS_8NCBLmuunNXtnotQ` },
 			};
 			const response = await axios.get(url, options);
+			if(response.status != 200 ) return false;
 			//console.log(response.data);
 			return matchRecord = response.data;
 		} catch (err){

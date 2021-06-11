@@ -5,69 +5,63 @@
 {% block content %}
 
 <form method='get' action='/user' autocomplete='off'  class='search_box user' >
-	<input type='text' name='id' placeholder ='감독명'>
+	<input type='text' name='id' placeholder ='구단주 명을 입력하세요'>
 	<input type='submit' value='검색'>
 </form>
 
-<div class='data_wrap userData'>
+<div class='data_wrap'>
+	<div class='userData'>
 	{% if not userData %}
 	<div class='noData'>회원 정보가 없습니다.</div>
 	{% else %}
-	<dl>
-		<dt>accessId</dt>
-		<dd>{{ userData.accessId }}</dd>
-	</dl>
-	<dl>
-		<dt>닉네임</dt>
-		<dd>{{ userData.nickname }}</dd>
-	</dl>
-	<dl>
-		<dt>레벨</dt>
-		<dd>{{ userData.level }}</dd>
-	</dl>
+	{% if maxdivision %}
+	<div class='rank_img' style='background-image:url("./img/ico_rank{{ maxdivision.division.imgNo }}.png");' ></div>
 	{% endif %}
-	{% if maxdivision.length ==0 %}
-	<div class='noData'>랭크 기록이 없습니다.</div>
-	{% else %}
-		{% for data in maxdivision %}
-		<dl>
-			<dt>matchType</dt>
-			<dd>{{ data.matchType }}</dd>
-		</dl>
-		<dl>
-			<dt>division</dt>
-			<dd>{{ data.division }}</dd>
-		</dl>
-		<dl>
-			<dt>date</dt>
-			<dd>{{ data.achievementDate }}</dd>
-		</dl>
-		{% endfor %}
-	{% endif %}
-
-<div class='match_wrap'>
-{% if simpledata[0] == false %}
-<div class='noData'>경기 기록이 없습니다.</div>
-{% else %}
-	{% for data in simpledata %}
-		<div class='match_summary {% if data.result == "승"%} win {% elseif data.result =="패" %}lose{% endif %}'>
-			<div class='match_result'>{{data.result}}</div>
-			<div class='match'>
-				<div class='match_desc'>
-				<div class='team hometeam'>					
-					<span class='box goal'>{{data.team1.goal}}</span>
-					<span class='box nickname'>{{data.team1.nickname}}</span>
-				</div>
-				<div class='team awayteam'>
-					<span class='box goal'>{{data.team2.goal}}</span>
-					<span class='box nickname'>{{data.team2.nickname}}</span>
-				</div>
-				</div>
-			</div>
+		<div class='dn'>{{ userData.accessId }}</div>
+		<div class='userDesc'>
+			<div class='nickname'>{{ userData.nickname }}</div>
+			<dl>
+			<dt class='tit'>LEVEL</dt>
+			<dd>{{ userData.level }}</dd>
+			</dl>
+			{% endif %}
+			{% if not maxdivision %}
+			<div class='noData'>랭크 기록이 없습니다.</div>
+			{% else %}
+			<dl>
+			<dt class='tit'>역대 최고 등급</dt>
+			<dd class='rank_name'>{{ maxdivision.division.name }}</dd>
+			</dl>
+			<dl>
+			<dt class='tit'>달성일</dt>
+			<dd class='rank_time'>{{ maxdivision.achievementDate }}</dd>
+			</dl>
+			{% endif %}
 		</div>
-	{% endfor %}
-{% endif %}
-</div>
+	</div><!-- userData -->
+	<div class='match_wrap'>
+		{% if simpledata[0] == false %}
+		<div class='noData'>경기 기록이 없습니다.</div>
+		{% else %}
+			{% for data in simpledata %}
+				<div class='match_summary {% if data.result == "승"%} win {% elseif data.result =="패" %}lose{% endif %}'>
+					<div class='match_result'>{{data.result}}</div>
+					<div class='match'>
+						<div class='match_desc'>
+						<div class='team hometeam'>					
+							<span class='box goal'>{{data.team1.goal}}</span>
+							<span class='box nickname'>{{data.team1.nickname}}</span>
+						</div>
+						<div class='team awayteam'>
+							<span class='box goal'>{{data.team2.goal}}</span>
+							<span class='box nickname'>{{data.team2.nickname}}</span>
+						</div>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		{% endif %}
+	</div><!--match_wrap-->
 </div>
 
 {% endblock %}

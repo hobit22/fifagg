@@ -24,20 +24,20 @@ router.get('/user', async (req,res,next) =>{
 	//console.log("record [0] = " , matchRecord[0]);
 	for(let i = 0; i< 10; i++){
 		sample = await changeData.toSimpleRecord(matchRecord[i] , id );
+		if(sample == false) break;
 		simpledata.push(sample);
 	}
 	
 	const data = {
 		userData : userData,
-		maxdivision : maxdivision,		
-		simpledata : simpledata,
+		maxdivision : maxdivision,
+		simpledata : simpledata,		
 	};	
-	for( let i=0;i<data.maxdivision.length; i++){
-		data.maxdivision[i].matchType = await changeData.toMatchType(data.maxdivision[i].matchType);
-		data.maxdivision[i].division = await changeData.toDivision(data.maxdivision[i].division);
+	if( data.maxdivision ) {
+		data.maxdivision.matchType = await changeData.toMatchType(data.maxdivision.matchType);	
+		data.maxdivision.division = await changeData.toDivision(data.maxdivision.division);	
 	}
-	
-	console.log(data);
+	console.log(maxdivision);
 	return res.render('search/form', data);
 });
 
