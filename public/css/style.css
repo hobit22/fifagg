@@ -41,12 +41,14 @@ background-position: center center;}
 .match_summary .match_date {text-align: center; width: 150px; height: 60px; line-height: 60px;}
 .match { display: table-cell; width: 100%; vertical-align:middle;}
 .match .match_desc { display: table; width: 100%; position: relative;}
-.match_summary .team {display: table-cell; width: 50%; padding: 0 20px;}
+.match_summary .team {display: table-cell; width: 48%; padding: 0 20px;}
 .match_summary .hometeam{ padding-right: 0;}
 .match_summary .awayteam {padding-left: 5px;}
 .match_desc .hometeam .box{float: right; padding: 10px;}
 .match_desc .depart { position: absolute; top: 10px;}
 .match_desc .awayteam .box{float: left;padding: 10px;}
+.match_desc .icon {display:table-cell; vertical-align:middle;}
+.match_desc i { font-size: 25px; font-weight: 300;}
 .match:after{ clear:both; display:block; content:'';}
 
 .match_summary.lose {background-color : #e2b6b3; border: 1px solid #cea7a7;}
