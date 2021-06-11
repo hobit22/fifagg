@@ -10,6 +10,10 @@ dd { display: table-cell; vertical-align: middle; padding: 10px; }
 .dn { display: none !important;}
 .noData { height: 150px; text-align : center; font-size: 30px; line-height: 150px;}
 
+#layer_dim { background:rgba(0, 0, 0, 0.7); position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+#layer_popup { background-color: #ffffff; position: fixed; width: 320px; height: 300px; top: calc(50% - 160px); left: calc(50% - 150px); z-index: 1; }
+
+
 .layout_width { max-width: 1000px !important; margin : 0 auto !important;}
 body { min-height: 1000px; height: 100%; background-image : url("/img/main_bg.jpg"); background-size: cover; position: relative; background-position:center center; background-repeat: no-repeat} 
 
@@ -49,7 +53,7 @@ background-position: center center;}
 .match_desc .hometeam .box{float: right; padding: 10px;}
 .match_desc .depart { position: absolute; top: 10px;}
 .match_desc .awayteam .box{float: left;padding: 10px;}
-.match_desc .icon {display:table-cell; vertical-align:middle;}
+.match_desc .icon {display:table-cell; vertical-align:middle; cursor:pointer;}
 .match_desc i { font-size: 25px; font-weight: 300;}
 .match:after{ clear:both; display:block; content:'';}
 

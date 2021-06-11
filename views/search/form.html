@@ -1,4 +1,7 @@
 {% extends '../layout.html' %}
+{% block script %}
+<script type='text/babel' src='/js/popup.js'></script>
+{% endblock %}
 
 {% block mainMenu %}
 
@@ -62,8 +65,8 @@
 							<span class='box goal'>{{data.team2.goal}}</span>
 							<span class='box nickname'>{{data.team2.nickname}}</span>
 						</div>
-						<div class='icon'>
-						<i class='xi-plus-square-o'></i>
+						<div class='icon' data-matchid='{{ data.matchId }}'>
+							<i class='xi-plus-square-o'></i>
 						</div>
 						</div><!-- match-dsec' -->
 					</div><!-- match -->
@@ -72,5 +75,13 @@
 		{% endif %}
 	</div><!--match_wrap-->
 </div>
+
+<div id='layer_dim' class='dn'></div>
+<div id='layer_popup'  class='dn'>
+	<form id='frmFile' method='post' action='/' target='ifrmHidden'>
+		
+	</form>
+</div>
+
 
 {% endblock %}

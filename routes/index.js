@@ -37,7 +37,7 @@ router.get('/user', async (req,res,next) =>{
 		data.maxdivision.matchType = await changeData.toMatchType(data.maxdivision.matchType);	
 		data.maxdivision.division = await changeData.toDivision(data.maxdivision.division);	
 	}
-	console.log(data);
+	//console.log(data);
 	return res.render('search/form', data);
 });
 
@@ -48,6 +48,15 @@ router.get('/getData', async (req,res,next) =>{
 	//await getData.positionData();
 	//await getData.rankData();
 	return res.redirect('/');
+});
+
+router.get('/match' , (req,res,next)=>{
+	console.log(req.url);
+	console.log("#############################################");
+	console.log("쿼리값 = ", req.query);
+	console.log("#############################################");
+	
+	return res.render("match/index");
 });
 
 module.exports = router;	

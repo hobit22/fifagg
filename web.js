@@ -9,7 +9,9 @@ const app = express();
 
 
 /** 라우터 */
+const matchRouter = require('./routes/match');
 const indexRouter = require('./routes');
+
 dotenv.config();
 
 app.set('port', 8001);
@@ -43,7 +45,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended : false }));
 
+app.use("/match", matchRouter);
 app.use(indexRouter); // "/" 기본 URL 생략 가능
+//app.use("/match",matchRouter); // "/match" match 상세보기
+
 
 
 /** 없는 페이지 미들웨어 */
