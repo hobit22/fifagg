@@ -38,10 +38,10 @@ background-position: center center;}
 /** 경기 결과 */
 .match_wrap { padding : 5px 0; margin : 5px;}
 .match_summary { display: table; width: 100%; background-color: white; font-size: 15px; margin : 3px 0;} 
-.match_summary .match_date {text-align: center; width: 150px; height: 60px; line-height: 60px;}
+.match_summary .match_date {text-align: center; width: 150px; height: 60px; line-height: 60px; margin: 0 10px;}
 .match { display: table-cell; width: 100%; vertical-align:middle;}
 .match .match_desc { display: table; width: 100%; position: relative;}
-.match_summary .team {display: table-cell; width: 48%; padding: 0 20px;}
+.match_summary .team {display: table-cell; width: 48%; }
 .match_summary .hometeam{ padding-right: 0;}
 .match_summary .awayteam {padding-left: 5px;}
 .match_desc .hometeam .box{float: right; padding: 10px;}
