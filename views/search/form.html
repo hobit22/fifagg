@@ -11,33 +11,35 @@
 
 <div class='data_wrap'>
 	<div class='userData'>
-	{% if not userData %}
-	<div class='noData'>회원 정보가 없습니다.</div>
-	{% else %}
-	{% if maxdivision %}
-	<div class='rank_img' style='background-image:url("./img/ico_rank{{ maxdivision.division.imgNo }}.png");' ></div>
-	{% endif %}
+		{% if not userData %}
+		<div class='noData'>회원 정보가 없습니다.</div>
+		{% else %}
+		{% if maxdivision %}
+		<div class='box'>
+			<div class='rank_img' style='background-image:url("./img/ico_rank{{ maxdivision.division.imgNo }}.png");' ></div>
+		</div>
+		{% endif %}
 		<div class='dn'>{{ userData.accessId }}</div>
 		<div class='userDesc'>
 			<div class='nickname'>{{ userData.nickname }}</div>
 			<dl>
-			<dt class='tit'>LEVEL</dt>
-			<dd>{{ userData.level }}</dd>
+				<dt class='tit'>LEVEL</dt>
+				<dd>{{ userData.level }}</dd>
 			</dl>
 			{% endif %}
 			{% if not maxdivision %}
 			<div class='noData'>랭크 기록이 없습니다.</div>
 			{% else %}
 			<dl>
-			<dt class='tit'>역대 최고 등급</dt>
-			<dd class='rank_name'>{{ maxdivision.division.name }}</dd>
+				<dt class='tit'>역대 최고 등급</dt>
+				<dd class='rank_name'>{{ maxdivision.division.name }}</dd>
 			</dl>
 			<dl>
-			<dt class='tit'>달성일</dt>
-			<dd class='rank_time'>{{ maxdivision.achievementDate }}</dd>
+				<dt class='tit'>달성일</dt>
+				<dd class='rank_time'>{{ maxdivision.achievementDate }}</dd>
 			</dl>
 			{% endif %}
-		</div>
+		</div><!--userDesc-->
 	</div><!-- userData -->
 	<div class='match_wrap'>
 		{% if simpledata[0] == false %}
