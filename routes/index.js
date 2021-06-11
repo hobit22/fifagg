@@ -31,7 +31,7 @@ router.get('/user', async (req,res,next) =>{
 	const data = {
 		userData : userData,
 		maxdivision : maxdivision,
-		simpledata : simpledata,		
+		simpledata : simpledata,
 	};	
 	if( data.maxdivision ) {
 		data.maxdivision.matchType = await changeData.toMatchType(data.maxdivision.matchType);	
