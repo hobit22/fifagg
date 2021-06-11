@@ -52,13 +52,15 @@ const layer = {
 			zIndex: 101,
 			border : "1px solid #dddddd",
 			borderRadius : "20px",
+			overflow: "hidden",
 		});
 		
 		$.ajax({
 			url : url,
 			type : "get",
-			dataType : "html",
+			dataType : "text",
 			success : function(res) {
+				console.log(res);
 				$layerPopup.html(res);
 			},
 			error : function(err) {

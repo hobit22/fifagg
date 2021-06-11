@@ -51,12 +51,9 @@ router.get('/getData', async (req,res,next) =>{
 });
 
 router.get('/match' , (req,res,next)=>{
-	console.log(req.url);
-	console.log("#############################################");
-	console.log("쿼리값 = ", req.query);
-	console.log("#############################################");
-	
-	return res.render("match/index");
+	const data = req.query;
+	console.log(data);
+	return res.render("match/index", data);
 });
 
 module.exports = router;	
