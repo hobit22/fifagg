@@ -47,7 +47,7 @@ app.use(express.urlencoded({ extended : false }));
 
 app.use("/match", matchRouter);
 app.use(indexRouter); // "/" 기본 URL 생략 가능
-//app.use("/match",matchRouter); // "/match" match 상세보기
+app.use("/match",matchRouter); // "/match" match 상세보기
 
 
 
