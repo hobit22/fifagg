@@ -25,13 +25,11 @@ main { background-image : url("/img/main_bg.jpg"); background-size: cover; posit
 .footer{ background-color: #f8f9fa; }
 .bottom_footer { color: #e5e5e5; text-align : center; font-size: 15px; padding : 15px 0;}
 
-#main_wrap .search_box { text-align: center; position: absolute; top: calc(50% - 120px); left: calc(50% - 200px); }
-nav .search_box { float: right; margin : 10px;}
-nav:after{ clear:right; display:block; content:'';}
-.search_box input[type='text']{ font-size: 17px; padding: 10px;} 	
+#main_searchBox { text-align: center; position: absolute; top: calc(50% - 120px); left: calc(50% - 200px); }
+input[type='text']{ font-size: 17px; padding: 10px; width: auto;} 	
 
 #main_wrap { width: 100%; height: calc(100% - 131px);}
-#main_wrap .search_box.user { text-align: center; position:relative; padding : 10px 0; width: auto;}
+#main_wrap .search_box.user { text-align: right; padding : 10px 0;position : relative;}
 
 .data_wrap { background-color: rgba(200,200,200,0.8);}
 
