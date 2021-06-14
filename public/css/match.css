@@ -5,3 +5,9 @@
 .team{ width: 400px; margin : auto;}
 .title, .box { text-align: center; font-size: 14px; height: 50px; border-bottom : 1px solid #e2e2e6;}
 .matchInfo .mid { width: 150px; background-color: #f8f7ff; margin : 0 10px !important;}
+
+.matchDetail { position: relative;}
+.arrow { position : absolute; width: 30px; height: 30px; display: block;}
+.arrow i { font-size: 30px;}
+.hteam { top: 50%; left : 10px;}
+.ateam { top: 50%; right : 10px;}

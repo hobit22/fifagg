@@ -30,7 +30,7 @@ body{ width: 100%; height: 100%;}
 #main_searchBox { text-align: center; position: absolute; top: calc(50% - 120px); left: calc(50% - 200px); }
 input[type='text']{ font-size: 17px; padding: 10px; width: auto;} 	
 
-#main_wrap { width: 100%; padding: 20px; height: 100%;}
+#main_wrap { width: 100%; padding: 20px; }
 #main_wrap .search_box.user { text-align: right; padding : 10px 0;position : relative;}
 
 .data_wrap { background-color: rgba(200,200,200,0.8); }

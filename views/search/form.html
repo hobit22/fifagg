@@ -64,12 +64,12 @@
 						<div class='match_desc'>
 						<div class='team hometeam'>					
 							<span class='box goal'>{{data.team1.goal}}</span>
-							<span class='box nickname'>{{data.team1.nickname}}</span>
+							<a href='/user?id={{data.team1.nickname}}' class='box nickname'>{{data.team1.nickname}}</a>
 						</div>
 						<div class='depart'>:</div>
 						<div class='team awayteam'>
 							<span class='box goal'>{{data.team2.goal}}</span>
-							<span class='box nickname'>{{data.team2.nickname}}</span>
+							<a href ='/user?id={{data.team2.nickname}}' class='box nickname'>{{data.team2.nickname}}</a>
 						</div>
 						<div class='icon' data-matchid='{{ data.matchId }}'>
 							<i class='xi-plus-square-o'></i>
