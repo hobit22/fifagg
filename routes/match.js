@@ -17,13 +17,16 @@ router.route('/')
 				//console.log(response.data.matchInfo);
 				const matchInfo = response.data.matchInfo;
 				var goalSuccessRate = (Number(matchInfo[0].shoot.goalTotal/matchInfo[0].shoot.shootTotal)*100).toFixed(1);
+				if ( isNaN(goalSuccessRate) ) goalSuccessRate= 0;
+				var passSuccessRate = (Number(matchInfo[0].pass.passSuccess/matchInfo[0].pass.passTry)*100).toFixed(1);
+				if ( isNaN(passSuccessRate) ) passSuccessRate=0;
 				var team1 = {
 					nickname : matchInfo[0].nickname,
 					goal : matchInfo[0].shoot.goalTotal,
 					shoot : matchInfo[0].shoot.shootTotal,
 					effShoot : matchInfo[0].shoot.effectiveShootTotal,
 					goalSuccessRate : goalSuccessRate,
-					passSuccessRate : (Number(matchInfo[0].pass.passSuccess/matchInfo[0].pass.passTry)*100).toFixed(1),
+					passSuccessRate : passSuccessRate,
 					possession : matchInfo[0].matchDetail.possession,
 					cornerKick : matchInfo[0].matchDetail.cornerKick,
 					tackle : matchInfo[0].defence.tackleTry,
@@ -34,13 +37,16 @@ router.route('/')
 				}
 				//console.log(team1);
 				var goalSuccessRate = (Number(matchInfo[1].shoot.goalTotal/matchInfo[1].shoot.shootTotal)*100).toFixed(1);
+				if ( isNaN(goalSuccessRate) ) goalSuccessRate= 0;
+				var passSuccessRate = (Number(matchInfo[1].pass.passSuccess/matchInfo[1].pass.passTry)*100).toFixed(1);
+				if ( isNaN(passSuccessRate) ) passSuccessRate=0;
 				var team2 ={
 					nickname : matchInfo[1].nickname,
 					goal : matchInfo[1].shoot.goalTotal,
 					shoot : matchInfo[1].shoot.shootTotal,
 					effShoot : matchInfo[1].shoot.effectiveShootTotal,
 					goalSuccessRate : goalSuccessRate,
-					passSuccessRate : (Number(matchInfo[1].pass.passSuccess/matchInfo[1].pass.passTry)*100).toFixed(1),
+					passSuccessRate : passSuccessRate,
 					possession : matchInfo[1].matchDetail.possession,
 					cornerKick : matchInfo[1].matchDetail.cornerKick,
 					tackle : matchInfo[1].defence.tackleTry,

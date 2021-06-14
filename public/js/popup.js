@@ -85,7 +85,7 @@ $(function() {
 		//console.log(matchid);
 		layer.popup('/match?matchId='+matchid);
 	});
-	
+	/*
 	$("body").on("click", ".hteam_arrow", function() {
 		console.log("화살표클릭");
 		let match = $(".matchDetail");
@@ -116,7 +116,7 @@ $(function() {
 		
 		
 	});
-	
+	*/	
 	
 	$("body").on("click", "#layer_dim", function() {
 		layer.close();
