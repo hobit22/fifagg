@@ -10,7 +10,7 @@ const app = express();
 
 /** 라우터 */
 const matchRouter = require('./routes/match');
-const teamRouter = require('./routes/team');
+const squadRouter = require('./routes/squad');
 const indexRouter = require('./routes');
 
 dotenv.config();
@@ -49,7 +49,7 @@ app.use(express.urlencoded({ extended : false }));
 
 app.use(indexRouter); // "/" 기본 URL 생략 가능
 app.use("/match",matchRouter); // "/match" match 상세보기
-app.use("/team",teamRouter); // "/team" team 상세보기
+app.use("/squad",squadRouter); // "/team" team 상세보기
 
 
 

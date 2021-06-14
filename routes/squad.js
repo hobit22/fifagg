@@ -6,9 +6,9 @@ const router = express.Router();
 
 router.route('/')
 	.get( async (req,res,next) => {
-		console.log(req.query);
+		console.log(req.body);
 		const data = req.query;
-		return res.render("match/team", data);
+		return res.render("match/_squad", data);
 	});
 
 module.exports = router;

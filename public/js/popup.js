@@ -118,6 +118,17 @@ $(function() {
 	});
 	*/	
 	
+	$("body").on("click", ".hteam_arrow", function() {
+		var obj = Object.values($(this).data());
+		var matchId = obj[1];
+		var team = obj[0];
+		const data = {
+			matchId : matchId,
+			team : team.
+		};
+		
+	});
+	
 	$("body").on("click", "#layer_dim", function() {
 		layer.close();
 	});

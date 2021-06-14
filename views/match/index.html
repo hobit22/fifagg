@@ -29,74 +29,12 @@
 	<main id='' class='matchDetail'>
 	<div class='layout_width'>
 	<div class='matchTitle'>경기 상세기록</div>
-		<div class='hteam_arrow hteam' data-matchId={{matchId}}><i class='xi-angle-left'></i></div>
-		<div class='ateam_arrow ateam' data-matchId={{matchId}}><i class='xi-angle-right '></i></div>
+		<div class='hteam_arrow hteam' data-matchId={{matchId}} data-team=home><i class='xi-angle-left'></i></div>
+		<div class='ateam_arrow ateam' data-matchId={{matchId}} data-team=away><i class='xi-angle-right '></i></div>
 		<div class='matchInfo'>
-			<dl class='title'>
-				<dt class='team home'>{{ team1.nickname }}</dt>
-				<dt class='mid'>항목</dt>
-				<dt class='team away'>{{ team2.nickname }}</dt>
-			</dl>
-			<dl class='box'>
-				<dd class='team home'>{{ team1.goal }}</dd>	
-				<dd class='mid'>골</dd>
-				<dd class='team away'>{{ team2.goal }}</dd>
-			</dl>
-			<dl class='box'>
-				<dd class='team home'>{{ team1.shoot }}</dd>
-				<dd class='mid'>슛</dd>
-				<dd class='team away'>{{ team2.shoot }}</dd>
-			</dl>
-			<dl class='box'>
-				<dd class='team home'>{{ team1.effShoot }}</dd>
-				<dd class='mid'>유효슛</dd>
-				<dd class='team away'>{{ team2.effShoot }}</dd>
-			</dl>
-			<dl class='box'>
-				<dd class='team home'>{{ team1.goalSuccessRate }}%</dd>
-				<dd class='mid'>공격 성공률(%)</dd>
-				<dd class='team away'>{{ team2.goalSuccessRate }}%</dd>
-			</dl>
-			<dl class='box'>
-				<dd class='team home'>{{ team1.passSuccessRate }}%</dd>
-				<dd class='mid'>패스 성공률(%)</dd>
-				<dd class='team away'>{{ team2.passSuccessRate }}%</dd>
-			</dl>
-			<dl class='box'>
-				<dd class='team home'>{{ team1.possession }}%</dd>
-				<dd class='mid'>점유율(%)</dd>
-				<dd class='team away'>{{ team2.possession }}%</dd>
-			</dl>
-			<dl class='box'>
-				<dd class='team home'>{{ team1.cornerKick }}</dd>
-				<dd class='mid'>코너킥</dd>
-				<dd class='team away'>{{ team2.cornerKick }}</dd>
-			</dl>
-			<dl class='box'>
-				<dd class='team home'>{{ team1.tackle }}</dd>
-				<dd class='mid'>태클</dd>
-				<dd class='team away'>{{ team2.tackle }}</dd>
-			</dl>
-			<dl class='box'>
-				<dd class='team home'>{{ team1.foul }}</dd>
-				<dd class='mid'>파울</dd>
-				<dd class='team away'>{{ team2.foul }}</dd>
-			</dl>
-			<dl class='box'>
-				<dd class='team home'>{{ team1.yellowCards }}</dd>
-				<dd class='mid'>경고</dd>
-				<dd class='team away'>{{ team2.yellowCards }}</dd>
-			</dl>
-			<dl class='box'>
-				<dd class='team home'>{{ team1.redCards }}</dd>
-				<dd class='mid'>퇴장</dd>
-				<dd class='team away'>{{ team2.redCards }}</dd>
-			</dl>
-			<dl class='box'>
-				<dd class='team home'>{{ team1.injury }}</dd>
-				<dd class='mid'>부상</dd>
-				<dd class='team away'>{{ team2.injury }}</dd>
-			</dl>
+		{% block content %}
+		{% include "match/_matchInfo.html" %}
+		{% endblock %}
 		</div><!--matchInfo-->
 	</div>
 	</main>
