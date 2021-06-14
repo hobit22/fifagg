@@ -7,7 +7,7 @@
     "dev": "nodemon web",
     "start": "node web.js",
     "stop": "pm2 kill",
-	"test": "node --trace-deprecation web"
+    "test": "node --trace-deprecation web"
   },
   "author": "",
   "license": "ISC",
@@ -21,7 +21,7 @@
     "morgan": "^1.10.0",
     "mysql2": "^2.2.5",
     "nunjucks": "^3.2.3",
-    "pm2": "^5.0.4",    
+    "pm2": "^5.0.4",
     "sequelize": "^6.6.2",
     "sequelize-cli": "^6.2.0",
     "winston": "^3.3.3"
