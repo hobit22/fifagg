@@ -19,11 +19,13 @@
 		{% if not userData %}
 		<div class='noData'>회원 정보가 없습니다.</div>
 		{% else %}
-		{% if maxdivision %}
-		<div class='box'>
-			<div class='rank_img' style='background-image:url("./img/ico_rank{{ maxdivision.division.imgNo }}.png");' ></div>
-		</div>
-		{% endif %}
+			<div class='box'>
+			{% if maxdivision %}			
+				<div class='rank_img' style='background-image:url("./img/ico_rank{{ maxdivision.division.imgNo }}.png");' ></div>			
+			{% else %}
+				<div class='norank_img' style='background-image:url("./img/undraw_No_data_re_kwbl.svg");'></div>
+			{% endif %}
+			</div>
 		<div class='dn'>{{ userData.accessId }}</div>
 		<div class='userDesc'>
 			<div class='nickname'>{{ userData.nickname }}</div>
@@ -31,9 +33,8 @@
 				<dt class='tit'>LEVEL</dt>
 				<dd>{{ userData.level }}</dd>
 			</dl>
-			{% endif %}
-			{% if not maxdivision %}
-			<div class='noData'>랭크 기록이 없습니다.</div>
+		{% endif %}
+			{% if not maxdivision %}			
 			{% else %}
 			<dl>
 				<dt class='tit'>역대 최고 등급</dt>
@@ -45,6 +46,11 @@
 			</dl>
 			{% endif %}
 		</div><!--userDesc-->
+	{% if not maxdivision %}
+			<div id='no'>
+			<div class='noData'>랭크 기록이 없습니다.</div>
+			</div>
+			{% endif %}
 	</div><!-- userData -->
 	<div class='match_wrap'>
 		{% if simpledata[0] == false %}
