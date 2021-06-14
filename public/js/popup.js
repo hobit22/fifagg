@@ -60,7 +60,7 @@ const layer = {
 			type : "get",
 			dataType : "text",
 			success : function(res) {
-				console.log(res);
+				//console.log(res);
 				$layerPopup.html(res);
 			},
 			error : function(err) {
@@ -81,7 +81,7 @@ const layer = {
 $(function() {
 	$(".icon").click(function () {				
 		const matchid = Object.values($(this).data())[0];
-		console.log(matchid);
+		//console.log(matchid);
 		layer.popup('/match?matchId='+matchid);
 	});
 	
