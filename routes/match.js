@@ -51,10 +51,11 @@ router.route('/')
 				}
 				//console.log(team2);
 				const matchData = {
+					matchId,
 					team1,
 					team2,
 				}
-				console.log(matchData);
+				//console.log(matchData);
 				//return matchData;
 				return res.render("match/index", matchData);
 			}catch(err){

@@ -80,10 +80,43 @@ const layer = {
 
 $(function() {
 	$(".icon").click(function () {				
+		
 		const matchid = Object.values($(this).data())[0];
 		//console.log(matchid);
 		layer.popup('/match?matchId='+matchid);
 	});
+	
+	$("body").on("click", ".hteam_arrow", function() {
+		console.log("화살표클릭");
+		let match = $(".matchDetail");
+		match.removeClass("dn");
+		match.addClass("dn");
+		let hometeam = $("#popup_hometeam");
+		hometeam.removeClass("dn");		
+	});
+	
+	$("body").on("click", ".ateam_arrow", function() {
+		console.log("화살표클릭");
+		let match = $(".matchDetail");
+		match.removeClass("dn");
+		match.addClass("dn");
+		let awayteam = $("#popup_awayteam");
+		awayteam.removeClass("dn");		
+	});
+	
+	$("body").on("click", ".go_detail", function() {
+		let hometeam = $("#popup_hometeam");
+		hometeam.removeClass("dn").addClass("dn");		
+		let awayteam = $("#popup_awayteam");
+		awayteam.removeClass("dn").addClass("dn");		
+		
+		
+		let match = $(".matchDetail");
+		match.removeClass("dn");
+		
+		
+	});
+	
 	
 	$("body").on("click", "#layer_dim", function() {
 		layer.close();

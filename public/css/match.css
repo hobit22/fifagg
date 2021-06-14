@@ -6,8 +6,13 @@
 .title, .box { text-align: center; font-size: 14px; height: 50px; border-bottom : 1px solid #e2e2e6;}
 .matchInfo .mid { width: 150px; background-color: #f8f7ff; margin : 0 10px !important;}
 
-.matchDetail { position: relative;}
-.arrow { position : absolute; width: 30px; height: 30px; display: block;}
-.arrow i { font-size: 30px;}
-.hteam { top: 50%; left : 10px;}
-.ateam { top: 50%; right : 10px;}
+.matchDetail { position: relative; height: 100%;}
+.hteam_arrow ,.go_detail.away { position : absolute; width: 30px; height: 30px; display: block;}
+.ateam_arrow ,.go_detail.home { position : absolute; width: 30px; height: 30px; display: block;}
+ i { font-size: 30px;}
+.hteam ,.go_detail.away{ top: 50%; left : 10px;}
+.ateam ,.go_detail.home{ top: 50%; right : 10px;}
+
+#popup_hometeam, #popup_awayteam { height: 100%;}
+.squad{height: 100%; position: relative;}
+.squad .tit{border-bottom : 1px solid #d5d5d5; text-align: center;padding : 20px 0; font-size: 17px;}
