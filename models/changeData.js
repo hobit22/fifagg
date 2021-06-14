@@ -72,7 +72,7 @@ const changeData = {
 				result : result,
 				team1 : team1,
 				team2 : team2,
-				matchDate : response.data.matchDate,
+				matchDate : response.data.matchDate.replace(/[A-Z]/g, ' '),
 			}
 			
 			return data;

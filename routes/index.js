@@ -36,8 +36,9 @@ router.get('/user', async (req,res,next) =>{
 	if( data.maxdivision ) {
 		data.maxdivision.matchType = await changeData.toMatchType(data.maxdivision.matchType);	
 		data.maxdivision.division = await changeData.toDivision(data.maxdivision.division);	
+		data.maxdivision.achievementDate = data.maxdivision.achievementDate.replace(/[A-Z]/g,'  ');
 	}
-	//console.log(data);
+	console.log(data.maxdivision);
 	return res.render('search/form', data);
 });
 
@@ -49,11 +50,5 @@ router.get('/getData', async (req,res,next) =>{
 	//await getData.rankData();
 	return res.redirect('/');
 });
-/*
-router.get('/match' , (req,res,next)=>{
-	const data = req.query;
-	console.log(data);
-	return res.render("match/index", data);
-});
-*/
+
 module.exports = router;	
