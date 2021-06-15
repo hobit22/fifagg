@@ -48,6 +48,7 @@ router.get('/getData', async (req,res,next) =>{
 	//await getData.playerData();
 	//await getData.positionData();
 	//await getData.rankData();
+	//await getData.seasonData();
 	return res.redirect('/');
 });
 

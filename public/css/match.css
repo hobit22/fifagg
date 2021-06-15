@@ -30,41 +30,43 @@
 
 /** filed */
 .filed {background-image:url("/img/filed.jpg"); background-size: cover; position: relative; background-position:center center; background-repeat: no-repeat; width: 480px; height: 668px; display:table-cell; float: left;}
-.filed .player_img {width: 80px; height: 80px; position:absolute;}
-.filed .player_img.GK{bottom:10px;left: calc(50% - 40px);}
-.filed .player_img.SW{bottom:90px;left: calc(50% - 40px);}
-.filed .player_img.LB{bottom:100px;left: 0;}
-.filed .player_img.LCB{bottom:100px;left: 100px;}
-.filed .player_img.CB{bottom:100px;left: calc(50% - 40px);}
-.filed .player_img.RCB{bottom:100px;right: 100px;}
-.filed .player_img.RB{bottom:100px;right: 0;}
-.filed .player_img.SW{bottom:100px;left: calc(50% - 40px);}
-.filed .player_img.LWB{bottom:200px;left: 0;}
-.filed .player_img.LDM{bottom:200px;left: 100px;}
-.filed .player_img.DM{bottom:200px;left: calc(50% - 40px);}
-.filed .player_img.RDM{bottom:200px;right: 100px;}
-.filed .player_img.RWB{bottom:200px;right: 0;}
+.filed .player_imgbox {width: 80px; height: 80px; position:absolute; text-align:center;}
+.filed .player_img{width: 100%; height: 100%;}
+.filed .playerNm{text-align:center; background-color: #ffffff; margin-bottom: 10px;}
+.filed .player_imgbox.GK{bottom:10px;left: calc(50% - 40px);}
+.filed .player_imgbox.SW{bottom:90px;left: calc(50% - 40px);}
+.filed .player_imgbox.LB{bottom:100px;left: 0;}
+.filed .player_imgbox.LCB{bottom:100px;left: 100px;}
+.filed .player_imgbox.CB{bottom:100px;left: calc(50% - 40px);}
+.filed .player_imgbox.RCB{bottom:100px;right: 100px;}
+.filed .player_imgbox.RB{bottom:100px;right: 0;}
+.filed .player_imgbox.SW{bottom:100px;left: calc(50% - 40px);}
+.filed .player_imgbox.LWB{bottom:200px;left: 0;}
+.filed .player_imgbox.LDM{bottom:200px;left: 100px;}
+.filed .player_imgbox.DM{bottom:200px;left: calc(50% - 40px);}
+.filed .player_imgbox.RDM{bottom:200px;right: 100px;}
+.filed .player_imgbox.RWB{bottom:200px;right: 0;}
 
-.filed .player_img.LM{bottom:calc(50% - 40px);left: 0;}
-.filed .player_img.LCB{bottom:calc(50% - 40px);left: 100px;}
-.filed .player_img.CM{bottom:calc(50% - 40px);left: calc(50% - 40px);}
-.filed .player_img.RCM{bottom:calc(50% - 40px);right: 100px;}
-.filed .player_img.RM{bottom:calc(50% - 40px);right: 0;}
+.filed .player_imgbox.LM{bottom:calc(50% - 40px);left: 0;}
+.filed .player_imgbox.LCB{bottom:calc(50% - 40px);left: 100px;}
+.filed .player_imgbox.CM{bottom:calc(50% - 40px);left: calc(50% - 40px);}
+.filed .player_imgbox.RCM{bottom:calc(50% - 40px);right: 100px;}
+.filed .player_imgbox.RM{bottom:calc(50% - 40px);right: 0;}
 
-.filed .player_img.LAM{top:120px;left: 100px;}
-.filed .player_img.CAM{top:120px;left: calc(50% - 40px);}
-.filed .player_img.RAM{top:120px;right: 100px;}
+.filed .player_imgbox.LAM{top:120px;left: 100px;}
+.filed .player_imgbox.CAM{top:120px;left: calc(50% - 40px);}
+.filed .player_imgbox.RAM{top:120px;right: 100px;}
 
 
-.filed .player_img.LW{top:80px;left: 0;}
-.filed .player_img.RW{top:80px;right: 0;}
+.filed .player_imgbox.LW{top:80px;left: 0;}
+.filed .player_imgbox.RW{top:80px;right: 0;}
 
-.filed .player_img.LCF{top:100px;left: 100px;}
-.filed .player_img.CF{top:100px;left: calc(50% - 40px);}
-.filed .player_img.RCF{top:100px;right: 100px;}
+.filed .player_imgbox.LCF{top:100px;left: 100px;}
+.filed .player_imgbox.CF{top:100px;left: calc(50% - 40px);}
+.filed .player_imgbox.RCF{top:100px;right: 100px;}
 
-.filed .player_img.LS{top:10px;left: 100px;}
-.filed .player_img.ST{top:10px;left: calc(50% - 40px);}
-.filed .player_img.RS{top:10px;right: 100px;}
+.filed .player_imgbox.LS{top:10px;left: 100px;}
+.filed .player_imgbox.ST{top:10px;left: calc(50% - 40px);}
+.filed .player_imgbox.RS{top:10px;right: 100px;}
 
-.filed .player_img.SUB{display:none;}
+.filed .player_imgbox.SUB{display:none;}

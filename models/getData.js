@@ -112,6 +112,35 @@ const getData = {
 			return false;
 		}
 	},
+	seasonData : async function(){
+		try{
+			const url = "https://static.api.nexon.co.kr/fifaonline4/latest/seasonid.json";
+			const options = {
+				
+			};
+			const response = await axios.get(url, options);
+			//console.log(response.data[0]);
+			
+			for (let i = 0; i<response.data.length; i++){
+				const sql = `INSERT INTO seasonId VALUES(:seasonId, :className, :seasonImg)`;
+				const replacements = {
+					seasonId : response.data[i].seasonId,
+					className : response.data[i].className,
+					seasonImg : response.data[i].seasonImg,
+				};
+				await sequelize.query(sql, {
+					replacements,
+					type: QueryTypes.INSERT,
+				});
+			}
+			
+			return true;
+			
+		}catch(err){
+			console.error(err);
+			return false;
+		}
+	},
 }
 
 module.exports = getData;

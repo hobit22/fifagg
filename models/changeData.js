@@ -82,6 +82,22 @@ const changeData = {
 			return false;
 		}
 	},
+	toImgUrl : async function(seasonId){
+		try{
+			const sql = `SELECT * FROM seasonId WHERE seasonId = ?`
+			const rows = await sequelize.query(sql, {
+				replacements : [seasonId],
+				type: QueryTypes.SELECT,
+			});
+			
+			console.log(rows[0].seasonImg);
+			return rows[0].seasonImg;			
+			
+		}catch(err){
+			console.error(err);
+			return false;
+		}
+	},
 	
 };
 

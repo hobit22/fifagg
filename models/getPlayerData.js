@@ -15,7 +15,7 @@ const getPlayerData = {
 			//console.log(rows[0].playerNm);
 			return rows[0].playerNm;
 		} catch(err){
-			console.error(err);
+			//console.error(err);
 			return false;
 		}
 	},
@@ -29,22 +29,9 @@ const getPlayerData = {
 			const response = await axios.get(url, options);
 			
 			return false;
-			/*
-			for (let i = 0; i<response.data.length; i++){
-				const sql = `INSERT INTO player (playerId , playerNm) VALUES(:playerId, :playerNm)`;
-				const replacements = {
-					playerId : response.data[i].id,
-					playerNm : response.data[i].name,
-				};
-				await sequelize.query(sql, {
-					replacements,
-					type: QueryTypes.INSERT,
-				});	
-			}
-			*/
 		} catch(err){
 			//console.log(err);
-			return spId = Number(spId.toString().slice(-6));;
+			return spId = Number(spId.toString().slice(-6));
 		} 
 	},
 	positionNm : async function(spPosition){
@@ -58,7 +45,7 @@ const getPlayerData = {
 			//console.log(rows[0].playerNm);
 			return rows[0].positionDesc;
 		} catch(err){
-			console.error(err);
+			//console.error(err);
 			return false;
 		}
 	}

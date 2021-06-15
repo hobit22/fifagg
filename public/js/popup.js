@@ -88,6 +88,8 @@ $(function() {
 	
 	$("body").on("click", ".hteam_arrow", function() {
 		console.log("홈팀 화살표클릭");
+		const matchid = Object.values($(this).data())[0];
+		
 		let match = $(".matchInfo");
 		match.removeClass("dn");
 		match.addClass("dn");
@@ -126,8 +128,6 @@ $(function() {
 		go_detail.addClass("dn");
 		let arrow = $(".arrow");
 		arrow.removeClass("dn");
-		
-		
 	});
 	
 	/*
