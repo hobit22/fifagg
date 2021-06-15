@@ -124,7 +124,7 @@ $(function() {
 		var team = obj[0];
 		const data = {
 			matchId : matchId,
-			team : team.
+			team : team,
 		};
 		
 	});
