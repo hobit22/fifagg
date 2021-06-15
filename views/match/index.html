@@ -10,13 +10,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 		<script type='text/babel' src='/js/common.js'></script>
 		<script type='text/babel' src='/js/popup.js'></script>
-		{% if addScript %}
-		{% for script in addScript %}
 		<script type='text/babel' src='/js/{{ script }}.js'></script>
-		{% endfor %}
-		{% endif %}
-		{% block script %}
-		{% endblock %}
 		<title></title>
 	</head>
 	<body{%if bodyClass %} class="body_{{ bodyClass }}"{% endif %}>
@@ -29,13 +23,15 @@
 	<main id='' class='matchDetail'>
 	<div class='layout_width'>
 	<div class='matchTitle'>경기 상세기록</div>
-		<div class='hteam_arrow hteam' data-matchId={{matchId}} data-team=home><i class='xi-angle-left'></i></div>
-		<div class='ateam_arrow ateam' data-matchId={{matchId}} data-team=away><i class='xi-angle-right '></i></div>
+		<div class='hteam_arrow hteam arrow' data-matchId={{matchId}} data-team=home><i class='xi-angle-left'></i></div>
+		<div class='ateam_arrow ateam arrow' data-matchId={{matchId}} data-team=away><i class='xi-angle-right '></i></div>
 		<div class='matchInfo'>
-		{% block content %}
-		{% include "match/_matchInfo.html" %}
-		{% endblock %}
+		{% include "./_matchInfo.html" %}
+			
 		</div><!--matchInfo-->
+		<div class='squadbox'>
+		{% include "./_squad.html" %}
+		</div>
 	</div>
 	</main>
 	<footer class='footer'>

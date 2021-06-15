@@ -46,12 +46,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended : false }));
 
-
-app.use(indexRouter); // "/" 기본 URL 생략 가능
 app.use("/match",matchRouter); // "/match" match 상세보기
 app.use("/squad",squadRouter); // "/team" team 상세보기
-
-
+app.use(indexRouter); // "/" 기본 URL 생략 가능
 
 /** 없는 페이지 미들웨어 */
 app.use((req,res,next)=>{

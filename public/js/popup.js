@@ -52,7 +52,7 @@ const layer = {
 			zIndex: 101,
 			border : "1px solid #dddddd",
 			borderRadius : "20px",
-			overflow: "hidden",
+			//overflow: "hidden",
 		});
 		
 		$.ajax({
@@ -85,23 +85,33 @@ $(function() {
 		//console.log(matchid);
 		layer.popup('/match?matchId='+matchid);
 	});
-	/*
+	
 	$("body").on("click", ".hteam_arrow", function() {
-		console.log("화살표클릭");
-		let match = $(".matchDetail");
+		console.log("홈팀 화살표클릭");
+		let match = $(".matchInfo");
 		match.removeClass("dn");
 		match.addClass("dn");
 		let hometeam = $("#popup_hometeam");
-		hometeam.removeClass("dn");		
+		let arrow = $(".arrow");
+		arrow.removeClass("dn");
+		arrow.addClass("dn");
+		hometeam.removeClass("dn");
+		let go_detail= $(".go_detail.right");
+		go_detail.removeClass("dn");
 	});
 	
 	$("body").on("click", ".ateam_arrow", function() {
-		console.log("화살표클릭");
-		let match = $(".matchDetail");
+		console.log("어웨이팀 화살표클릭");
+		let match = $(".matchInfo");
 		match.removeClass("dn");
 		match.addClass("dn");
 		let awayteam = $("#popup_awayteam");
 		awayteam.removeClass("dn");		
+		let arrow = $(".arrow");
+		arrow.removeClass("dn");
+		arrow.addClass("dn");
+		let go_detail= $(".go_detail.left");
+		go_detail.removeClass("dn");
 	});
 	
 	$("body").on("click", ".go_detail", function() {
@@ -109,26 +119,29 @@ $(function() {
 		hometeam.removeClass("dn").addClass("dn");		
 		let awayteam = $("#popup_awayteam");
 		awayteam.removeClass("dn").addClass("dn");		
-		
-		
-		let match = $(".matchDetail");
+		let match = $(".matchInfo");
 		match.removeClass("dn");
+		let go_detail = $(".go_detail");
+		go_detail.removeClass("dn");
+		go_detail.addClass("dn");
+		let arrow = $(".arrow");
+		arrow.removeClass("dn");
 		
 		
 	});
-	*/	
 	
+	/*
 	$("body").on("click", ".hteam_arrow", function() {
 		var obj = Object.values($(this).data());
 		var matchId = obj[1];
 		var team = obj[0];
 		const data = {
 			matchId : matchId,
-			team : team,
+			team : team.
 		};
 		
 	});
-	
+	*/
 	$("body").on("click", "#layer_dim", function() {
 		layer.close();
 	});

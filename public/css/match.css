@@ -7,12 +7,64 @@
 .matchInfo .mid { width: 150px; background-color: #f8f7ff; margin : 0 10px !important;}
 
 .matchDetail { position: relative; height: 100%;}
-.hteam_arrow ,.go_detail.away { position : absolute; width: 30px; height: 30px; display: block;}
-.ateam_arrow ,.go_detail.home { position : absolute; width: 30px; height: 30px; display: block;}
+.hteam_arrow{ position : absolute; width: 30px; height: 30px; display: block;}
+.ateam_arrow{ position : absolute; width: 30px; height: 30px; display: block;}
  i { font-size: 30px;}
-.hteam ,.go_detail.away{ top: 50%; left : 10px;}
-.ateam ,.go_detail.home{ top: 50%; right : 10px;}
+.hteam{ top: 50%; left : 10px;}
+.ateam{ top: 50%; right : 10px;}
 
-#popup_hometeam, #popup_awayteam { height: 100%;}
-.squad{height: 100%; position: relative;}
-.squad .tit{border-bottom : 1px solid #d5d5d5; text-align: center;padding : 20px 0; font-size: 17px;}
+.go_detail{position: absolute; width: 30px; height: 30px; display:block;}
+.right {top:50%; right: 10px;}
+.left {top:50%; left: 10px;}
+
+/** squad */
+.squad {display: table; width:1000px; margin-top:20px;}
+.player_wrap{display:table-cell; width: 480px; float:right;}
+.sqbox {padding : 5px;}
+.player_wrap dl { width: 100%; border-bottom : 1px solid #212121;}
+.player_wrap .tit { font-size: 15px; }
+.player_wrap dt{ width: 20%; text-align: center; border-bottom: 2px solid #212121; border-top: 2px solid #212121;}
+.player_wrap dd{ width: 20%; text-align: center; padding: 7px;}
+.player_wrap .player_name { width: 40%;}
+.player.goal {background-color: #ffa099; font-weight: 500;}
+
+/** filed */
+.filed {background-image:url("/img/filed.jpg"); background-size: cover; position: relative; background-position:center center; background-repeat: no-repeat; width: 480px; height: 668px; display:table-cell; float: left;}
+.filed .player_img {width: 80px; height: 80px; position:absolute;}
+.filed .player_img.GK{bottom:10px;left: calc(50% - 40px);}
+.filed .player_img.SW{bottom:90px;left: calc(50% - 40px);}
+.filed .player_img.LB{bottom:100px;left: 0;}
+.filed .player_img.LCB{bottom:100px;left: 100px;}
+.filed .player_img.CB{bottom:100px;left: calc(50% - 40px);}
+.filed .player_img.RCB{bottom:100px;right: 100px;}
+.filed .player_img.RB{bottom:100px;right: 0;}
+.filed .player_img.SW{bottom:100px;left: calc(50% - 40px);}
+.filed .player_img.LWB{bottom:200px;left: 0;}
+.filed .player_img.LDM{bottom:200px;left: 100px;}
+.filed .player_img.DM{bottom:200px;left: calc(50% - 40px);}
+.filed .player_img.RDM{bottom:200px;right: 100px;}
+.filed .player_img.RWB{bottom:200px;right: 0;}
+
+.filed .player_img.LM{bottom:calc(50% - 40px);left: 0;}
+.filed .player_img.LCB{bottom:calc(50% - 40px);left: 100px;}
+.filed .player_img.CM{bottom:calc(50% - 40px);left: calc(50% - 40px);}
+.filed .player_img.RCM{bottom:calc(50% - 40px);right: 100px;}
+.filed .player_img.RM{bottom:calc(50% - 40px);right: 0;}
+
+.filed .player_img.LAM{top:120px;left: 100px;}
+.filed .player_img.CAM{top:120px;left: calc(50% - 40px);}
+.filed .player_img.RAM{top:120px;right: 100px;}
+
+
+.filed .player_img.LW{top:80px;left: 0;}
+.filed .player_img.RW{top:80px;right: 0;}
+
+.filed .player_img.LCF{top:100px;left: 100px;}
+.filed .player_img.CF{top:100px;left: calc(50% - 40px);}
+.filed .player_img.RCF{top:100px;right: 100px;}
+
+.filed .player_img.LS{top:10px;left: 100px;}
+.filed .player_img.ST{top:10px;left: calc(50% - 40px);}
+.filed .player_img.RS{top:10px;right: 100px;}
+
+.filed .player_img.SUB{display:none;}

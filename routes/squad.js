@@ -6,8 +6,17 @@ const router = express.Router();
 
 router.route('/')
 	.get( async (req,res,next) => {
-		console.log(req.body);
-		const data = req.query;
+		/*
+		const data = req.body;
+		console.log(data);
+		console.log("여긴가");
+		return res.render("match/_squad", data);
+		*/
+	})
+	.post( async (req,res,next) => {
+		const data = req.body;
+		console.log(data);
+		console.log("여긴가");
 		return res.render("match/_squad", data);
 	});
 
