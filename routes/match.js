@@ -70,7 +70,7 @@ router.route('/')
 					team1_player[i].name = await getPlayerData.playerNm(team1_player[i].spId);	
 					team1_player[i].positionNm = await getPlayerData.positionNm(team1_player[i].spPosition);	
 					team1_player[i].imgType = await getPlayerData.playerImg(team1_player[i].spId);	
-					console.log(team1_player[i].imgType);
+					//console.log(team1_player[i].imgType);
 				}
 				
 				for(var i =0;i<team2_player.length; i++){

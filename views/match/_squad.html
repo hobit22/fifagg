@@ -24,7 +24,11 @@
 			<dd class='player_grade'>{{data.spGrade}}</dd>
 			<dd class='player_rate'>{{data.status.spRating}}</dd>
 			<dd class='dn'>
-			<img class='player_img' src='https://fo4.dn.nexoncdn.co.kr/live/externalAssets/common/playersAction/p{{data.spId}}.png'>
+		{% if data.imgType %}
+		<img class='player_img {{data.positionNm}}' data-spId={{data.spId}} src="https://fo4.dn.nexoncdn.co.kr/live/externalAssets/common/players/p{{data.imgType}}.png">
+		{% else %}
+		<img class='player_img {{data.positionNm}}' data-spId={{data.spId}} src='https://fo4.dn.nexoncdn.co.kr/live/externalAssets/common/playersAction/p{{data.spId}}.png'>
+		{% endif %}
 			</dd>
 		</dl>
 		{% endfor %}
@@ -57,7 +61,11 @@
 			<dd class='player_grade'>{{data.spGrade}}</dd>
 			<dd class='player_rate'>{{data.status.spRating}}</dd>
 			<dd class='dn'>
-			<img class='player_img' src='https://fo4.dn.nexoncdn.co.kr/live/externalAssets/common/playersAction/p{{data.spId}}.png'>
+		{% if data.imgType %}
+		<img class='player_img {{data.positionNm}}' data-spId={{data.spId}} src="https://fo4.dn.nexoncdn.co.kr/live/externalAssets/common/players/p{{data.imgType}}.png">
+		{% else %}
+		<img class='player_img {{data.positionNm}}' data-spId={{data.spId}} src='https://fo4.dn.nexoncdn.co.kr/live/externalAssets/common/playersAction/p{{data.spId}}.png'>
+		{% endif %}
 			</dd>
 		</dl>
 		{% endfor %}
