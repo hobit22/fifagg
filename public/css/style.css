@@ -18,7 +18,7 @@ dd { display: table-cell; vertical-align: middle; padding: 10px; }
 
 body{ width: 100%; height: 100%;}
 
-.layout_width { max-width: 1000px !important; margin : 0 auto !important;}
+.layout_width { max-width: 1000px !important; min-widht: 720px !important; margin : 0 auto !important;}
 #main_wrap { height: 100%;background-image : url("/img/main_bg.jpg"); background-size: cover; position: relative; background-position:center center; background-repeat: no-repeat} 
 
 .header{ background-color: rgb(38,38,38); }

@@ -18,8 +18,8 @@
 .left {top:50%; left: 10px;}
 
 /** squad */
-.squad {display: table; width:1000px; margin-top:20px;}
-.player_wrap{display:table-cell; width: 490px; float:right;}
+.squad {display: table; max-width:1000px; min-width: 720px; width: 100%; margin-top:20px;}
+.player_wrap{display:table-cell; width: calc(50% - 5px); float:right;}
 .sqbox {padding : 5px;}
 .player_wrap dl { width: 100%; border-bottom : 1px solid #212121;}
 .player_wrap .tit { font-size: 15px; }
@@ -30,7 +30,7 @@
 .plaer .player_img { z-index:100; }
 
 /** filed and player */
-.filed {background-image:url("/img/filed.jpg"); background-size: cover; position: relative; background-position:center center; background-repeat: no-repeat; width: 490px; height: 668px; display:table-cell; float: left;}
+.filed {background-image:url("/img/filed.jpg"); background-size: cover; position: relative; background-position:center center; background-repeat: no-repeat; width: calc(50% - 5px); height: 668px; display:table-cell; float: left;}
 .filed .player_imgbox {width: 88px;height: 140px; position:absolute; text-align:center; background-size: cover;
 background-repeat: no-repeat;}
 .filed .player_img{position:absolute; width: 72px; height: 72px; top: 32px; right:2px; z-index:1;}
