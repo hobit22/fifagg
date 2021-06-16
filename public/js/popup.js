@@ -11,7 +11,7 @@ const layer = {
 	popup : function(url, width, height) {		
 		if (!url) return;
 		
-		width = width || 800;
+		width = width || 1000;
 		height = height || 800;
 		
 		/** 없는 경우 추가 */
