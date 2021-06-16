@@ -27,13 +27,13 @@
 .player_wrap dd{ width: 13%; text-align: center; padding: 7px;}
 .player_wrap .player_name { width: 35%;}
 .player.goal {background-color: #ffa099; font-weight: 500;}
-.plaer .player_img { z-index:100; }
+.player .player_img { z-index:100; }
 
 /** filed and player */
 .filed {background-image:url("/img/filed.jpg"); background-size: cover; position: relative; background-position:center center; background-repeat: no-repeat; width: calc(50% - 5px); height: 668px; display:table-cell; float: left;}
 .filed .player_imgbox {width: 88px;height: 140px; position:absolute; text-align:center; background-size: cover;
 background-repeat: no-repeat;}
-.filed .player_img{position:absolute; width: 72px; height: 72px; top: 32px; right:2px; z-index:1;}
+.filed .player_img{position:absolute; width: 72px; height: 72px; top: 32px; right:2px; z-index:0;}
 .filed .name_wrap{position:absolute; width: 100%; top:107px; left: 0; text-align:center; display: inline-block;}
 .filed .season { position:absolute; top: 25px; left: 5px;}
 .filed .season img{height: 16px;}
@@ -62,7 +62,6 @@ background-repeat: no-repeat;}
 .filed .player_imgbox.LAM{top:120px;left: 100px;}
 .filed .player_imgbox.CAM{top:120px;left: calc(50% - 40px);}
 .filed .player_imgbox.RAM{top:120px;right: 100px;}
-
 
 .filed .player_imgbox.LW{top:80px;left: 5px;}
 .filed .player_imgbox.RW{top:80px;right: 5px;}

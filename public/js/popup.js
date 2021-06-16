@@ -180,4 +180,12 @@ $(function() {
 		$(this).closest(".player").find("img.player_img").addClass("dn");
 	});
 	*/
+	$("body").on("mouseenter", ".player_img" ,function(){
+		$(this).closest(".player_imgbox").children().css('z-index',10);
+		$(this).closest(".player_imgbox").css('z-index',10);
+	});
+	$("body").on("mouseout", ".player_img" ,function(){
+		$(this).closest(".player_imgbox").children().css('z-index',0);
+		$(this).closest(".player_imgbox").css('z-index',0);
+	});
 });
