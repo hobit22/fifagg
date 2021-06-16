@@ -1,7 +1,7 @@
 <div id='popup_hometeam' class='squad dn'>
 	<div class='filed sqbox'>
 	{% for data in team1_player %}
-		<div class='player_imgbox   {{data.positionNm}}' background-img="{{data.seasonImg}}" >
+		<div class='player_imgbox   {{data.positionNm}}' style='background-image:url("{{data.bgImg.card}}");'>
 		<img class='player_img' 
 		data-spId='{{data.spId}}'
 		{% if data.status.goal %} 
@@ -17,7 +17,11 @@
 			'https://fo4.dn.nexoncdn.co.kr/live/externalAssets/common/playersAction/p{{data.spId}}.png'
 		{% endif %}
 		>
-		<span class='playerNm'>{{data.name}}</span>
+		<div class='season'>
+			<img src="{{data.bgImg.season}}">
+		</div>
+		<div class='playerNm'>{{data.name}}</div>
+		
 		</div>
 	{% endfor %}
 	</div>
@@ -34,20 +38,17 @@
 		{% for data in team1_player %}
 		<dl class='player {% if data.status.goal %} goal {% endif %}'>
 			<dd class='player_name'>{{data.name}}</dd>
+		<img class='player_img dn ' data-spId={{data.spId}} src=
+		{% if data.imgType %}
+		"https://fo4.dn.nexoncdn.co.kr/live/externalAssets/common/players/p{{data.imgType}}.png"
+		{% else %}'https://fo4.dn.nexoncdn.co.kr/live/externalAssets/common/playersAction/p{{data.spId}}.png'
+		{% endif %}>
+			
 			<dd class='player_positionNm'>{{data.positionNm}}</dd>
 			<dd class='player_grade'>{{data.spGrade}}</dd>
 			<dd class='player_rate'>{{data.status.spRating}}</dd>
 			<dd class='player_goal'>{% if data.status.goal %}{{data.status.goal}}{%endif%}</dd>
 			<dd class='player_assist'>{% if data.status.assist %}{{data.status.assist}}{%endif%}</dd>
-			<dd class='dn'>
-		
-		<img class='player_img {{data.positionNm}}' data-spId={{data.spId}} src=
-		{% if data.imgType %}
-		"https://fo4.dn.nexoncdn.co.kr/live/externalAssets/common/players/p{{data.imgType}}.png"
-		{% else %}'https://fo4.dn.nexoncdn.co.kr/live/externalAssets/common/playersAction/p{{data.spId}}.png'
-		{% endif %}>
-		
-			</dd>
 		</dl>
 		{% endfor %}
 	</div>
@@ -57,7 +58,7 @@
 <div id='popup_awayteam' class='squad dn'>
 	<div class='filed sqbox'>
 	{% for data in team2_player %}
-		<div class='player_imgbox   {{data.positionNm}}' background-img="{{data.seasonImg}}" >
+		<div class='player_imgbox   {{data.positionNm}}' style='background-image:url("{{data.bgImg.card}}");'>
 		<img class='player_img' 
 		data-spId='{{data.spId}}'
 		{% if data.status.goal %} 
@@ -73,7 +74,11 @@
 			'https://fo4.dn.nexoncdn.co.kr/live/externalAssets/common/playersAction/p{{data.spId}}.png'
 		{% endif %}
 		>
-		<span class='playerNm'>{{data.name}}</span>
+		<div class='season'>
+			<img src="{{data.bgImg.season}}">
+		</div>
+		<div class='playerNm'>{{data.name}}</div>
+		
 		</div>
 	{% endfor %}
 	</div>
@@ -89,20 +94,20 @@
 		</dl>
 		{% for data in team2_player %}
 		<dl class='player {% if data.status.goal > 0 %} goal {% endif %}'>
-			<dd class='player_name'>{{data.name}}</dd>
-			<dd class='player_positionNm'>{{data.positionNm}}</dd>
-			<dd class='player_grade'>{{data.spGrade}}</dd>
-			<dd class='player_rate'>{{data.status.spRating}}</dd>
-			<dd class='player_goal'>{% if data.status.goal %}{{data.status.goal}}{%endif%}</dd>
-			<dd class='player_assist'>{% if data.status.assist %}{{data.status.assist}}{%endif%}</dd>
-			<dd class='player_img dn'>
-		
-		<img class='player_img {{data.positionNm}}' data-spId={{data.spId}} src=
+			<dd class='player_name'>{{data.name}}
+			<img class='player_img dn' data-spId={{data.spId}} src=
 		{% if data.imgType %}
 		"https://fo4.dn.nexoncdn.co.kr/live/externalAssets/common/players/p{{data.imgType}}.png"
 		{% else %}'https://fo4.dn.nexoncdn.co.kr/live/externalAssets/common/playersAction/p{{data.spId}}.png'
 		{% endif %}>
 			</dd>
+		
+			<dd class='player_positionNm'>{{data.positionNm}}</dd>
+			<dd class='player_grade'>{{data.spGrade}}</dd>
+			<dd class='player_rate'>{{data.status.spRating}}</dd>
+			<dd class='player_goal'>{% if data.status.goal %}{{data.status.goal}}{%endif%}</dd>
+			<dd class='player_assist'>{% if data.status.assist %}{{data.status.assist}}{%endif%}</dd>
+			
 		</dl>
 		{% endfor %}
 	</div>

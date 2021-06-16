@@ -170,9 +170,14 @@ $(function() {
 	$("body").on("click", "#layer_dim", function() {
 		layer.close();
 	});
-	
-	$("body").on("hover", ".player_name" ,function(){
-		console.log("호버!");
+	/*
+	$("body").on("mouseenter", ".player_wrap dd.player_name" ,function(){
+		console.log("마우스 들어옴!");
+		$(this).closest(".player").find("img.player_img").removeClass("dn");
 	});
-	
+	$("body").on("mouseout", ".player_wrap dd.player_name" ,function(){
+		console.log("마우스 나감!");
+		$(this).closest(".player").find("img.player_img").addClass("dn");
+	});
+	*/
 });

@@ -90,8 +90,13 @@ const changeData = {
 				type: QueryTypes.SELECT,
 			});
 			
-			console.log(rows[0].seasonImg);
-			return rows[0].seasonImg;			
+			const season=(rows[0].seasonImg);
+			const data = {
+				season : season,
+				card : season.replace(/season/, "card"),
+			}
+			//console.log(data);
+			return data;			
 			
 		}catch(err){
 			console.error(err);
