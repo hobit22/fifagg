@@ -1,0 +1,21 @@
+
+	<div class='match_summary {% if data.result == "승"%} win {% elseif data.result =="패" %}lose{% endif %}' data-offset='0' data-limit='10'>
+		<!--<div class='match_result'>{{data.result}}</div>-->
+		<div class='match_date'>{{data.matchDate}}</div>
+		<div class='match'>
+			<div class='match_desc'>
+			<div class='team hometeam'>					
+				<span class='box goal'>{{data.team1.goal}}</span>
+				<a href='/user?id={{data.team1.nickname}}' class='box nickname'>{{data.team1.nickname}}</a>
+			</div>
+			<div class='depart'>:</div>
+			<div class='team awayteam'>
+				<span class='box goal'>{{data.team2.goal}}</span>
+				<a href ='/user?id={{data.team2.nickname}}' class='box nickname'>{{data.team2.nickname}}</a>
+			</div>
+			<div class='icon' data-matchid='{{ data.matchId }}'>
+				<i class='xi-plus-square-o'></i>
+			</div>
+			</div><!-- match-dsec' -->
+		</div><!-- match -->
+	</div>

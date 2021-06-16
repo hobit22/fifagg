@@ -26,9 +26,9 @@
 				<div class='norank_img' style='background-image:url("http://fo4.dn.nexoncdn.co.kr/live/externalAssets/common/players/not_found.png");'></div>
 			{% endif %}
 			</div>
-		<div class='dn'>{{ userData.accessId }}</div>
+		<div class='accessId dn' data-accessId='{{ userData.accessId }}'>{{ userData.accessId }}</div>
 		<div class='userDesc'>
-			<div class='nickname'>{{ userData.nickname }}</div>
+			<div class='nickname' data-nickname='{{ userData.nickname }}'>{{ userData.nickname }}</div>
 			<dl>
 				<dt class='tit'>LEVEL</dt>
 				<dd>{{ userData.level }}</dd>
@@ -47,17 +47,17 @@
 			{% endif %}
 		</div><!--userDesc-->
 	{% if not maxdivision %}
-			<div id='no'>
+		<div id='no'>
 			<div class='noData'>랭크 기록이 없습니다.</div>
-			</div>
-			{% endif %}
+		</div>
+	{% endif %}
 	</div><!-- userData -->
 	<div class='match_wrap'>
-		{% if simpledata[0] == false %}
+		{% if not simpledata[0] %}
 		<div class='noData'>경기 기록이 없습니다.</div>
 		{% else %}
 			{% for data in simpledata %}
-				<div class='match_summary {% if data.result == "승"%} win {% elseif data.result =="패" %}lose{% endif %}'>
+				<div class='match_summary {% if data.result == "승"%} win {% elseif data.result =="패" %}lose{% endif %}' data-offset='0' data-limit='10'>
 					<!--<div class='match_result'>{{data.result}}</div>-->
 					<div class='match_date'>{{data.matchDate}}</div>
 					<div class='match'>
@@ -78,6 +78,8 @@
 					</div><!-- match -->
 				</div>
 			{% endfor %}
+			
+			<div class='more'>더보기</div>
 		{% endif %}
 	</div><!--match_wrap-->
 </div>
