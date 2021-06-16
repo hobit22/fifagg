@@ -90,7 +90,7 @@ $(function() {
 	});
 	
 	$("body").on("click", ".hteam_arrow", function() {
-		console.log("홈팀 화살표클릭");
+		//console.log("홈팀 화살표클릭");
 		const team = Object.values($(this).data())[0];
 		const matchId = Object.values($(this).data())[1];
 		//console.log(team);
@@ -104,7 +104,7 @@ $(function() {
 			type : "get",
 			dataType : "html",
 			success : function(res) {
-				console.log(res);
+				//console.log(res);
 				$(".squadbox").replaceWith(res);
 				let hometeam = $("#popup_hometeam");
 				let arrow = $(".arrow");
@@ -123,11 +123,11 @@ $(function() {
 	});
 	
 	$("body").on("click", ".ateam_arrow", function() {
-		console.log("어웨이팀 화살표클릭");
+		//console.log("어웨이팀 화살표클릭");
 		const team = Object.values($(this).data())[0];
 		const matchId = Object.values($(this).data())[1];
-		console.log(team);
-		console.log( matchId);
+		//console.log(team);
+		//console.log( matchId);
 		let match = $(".matchInfo");
 		match.removeClass("dn");
 		match.addClass("dn");
@@ -137,7 +137,7 @@ $(function() {
 			type : "get",
 			dataType : "html",
 			success : function(res) {
-				console.log(res);
+				//console.log(res);
 				$(".squadbox").replaceWith(res);
 				let awayteam = $("#popup_awayteam");
 				let arrow = $(".arrow");

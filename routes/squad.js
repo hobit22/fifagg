@@ -53,7 +53,7 @@ router.route('/')
 					team1_player,
 					team2_player,
 				}
-				console.log(matchData);
+				//console.log(matchData);
 				return res.render("match/_squad", matchData);
 			}catch(err){
 				console.error(err);

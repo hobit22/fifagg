@@ -18,11 +18,16 @@
 			'https://fo4.dn.nexoncdn.co.kr/live/externalAssets/common/playersAction/p{{data.spId}}.png'
 		{% endif %}
 		>
-		<div class='season'>
-			<img src="{{data.bgImg.season}}">
+		<div class='playerPosition'>{{data.positionNm}}</div>
+		<div class='spGrade'>
+			<img src="http://s.nx.com/s2/game/fo4/obt/externalAssets/en/{{data.spGrade}}.png">
 		</div>
-		<div class='playerNm'>{{data.name}}</div>
-		
+			<div class='name_wrap'>
+			<div class='season'>
+				<img src="{{data.bgImg.season}}">
+			</div>
+			<div class='playerNm'>{{data.name}}</div>
+			</div>
 		</div>
 	{% endfor %}
 	</div>
@@ -44,7 +49,6 @@
 		"https://fo4.dn.nexoncdn.co.kr/live/externalAssets/common/players/p{{data.imgType}}.png"
 		{% else %}'https://fo4.dn.nexoncdn.co.kr/live/externalAssets/common/playersAction/p{{data.spId}}.png'
 		{% endif %}>
-			
 			<dd class='player_positionNm'>{{data.positionNm}}</dd>
 			<dd class='player_grade'>{{data.spGrade}}</dd>
 			<dd class='player_rate'>{{data.status.spRating}}</dd>
@@ -75,11 +79,16 @@
 			'https://fo4.dn.nexoncdn.co.kr/live/externalAssets/common/playersAction/p{{data.spId}}.png'
 		{% endif %}
 		>
-		<div class='season'>
-			<img src="{{data.bgImg.season}}">
+		<div class='playerPosition'>{{data.positionNm}}</div>
+		<div class='spGrade'>
+			<img src="http://s.nx.com/s2/game/fo4/obt/externalAssets/en/{{data.spGrade}}.png">
 		</div>
-		<div class='playerNm'>{{data.name}}</div>
-		
+			<div class='name_wrap'>
+			<div class='season'>
+				<img src="{{data.bgImg.season}}">
+			</div>
+			<div class='playerNm'>{{data.name}}</div>
+			</div>
 		</div>
 	{% endfor %}
 	</div>
