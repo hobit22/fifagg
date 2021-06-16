@@ -104,7 +104,7 @@ $(function() {
 			type : "get",
 			dataType : "html",
 			success : function(res) {
-				console.log(res);
+				//console.log(res);
 				$(".squadbox").replaceWith(res);
 				let hometeam = $("#popup_hometeam");
 				let arrow = $(".arrow");

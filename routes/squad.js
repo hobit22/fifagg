@@ -29,7 +29,7 @@ router.route('/')
 					team1_player[i].imgType = await getPlayerData.playerImg(team1_player[i].spId);	
 					team1_player[i].bgImg = await changeData.toImgUrl(team1_player[i].spId.toString().slice(0,3));
 				}
-				
+				console.log(team1_player[4]);
 				
 				var team2_player = matchInfo[1].player;
 				team2_player.sort(function(a,b) {
