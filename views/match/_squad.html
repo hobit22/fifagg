@@ -27,6 +27,8 @@
 			<dt class='player_positionNm'>포지션</dt>
 			<dt class='player_grade'>강화 등급</dd>
 			<dt class='player_rate'>평점</dd>
+			<dt class='player_goal'>골</dd>
+			<dt class='player_assist'>어시스트</dd>
 			<dt class='player_img dn'></dt>
 		</dl>
 		{% for data in team1_player %}
@@ -35,12 +37,16 @@
 			<dd class='player_positionNm'>{{data.positionNm}}</dd>
 			<dd class='player_grade'>{{data.spGrade}}</dd>
 			<dd class='player_rate'>{{data.status.spRating}}</dd>
+			<dd class='player_goal'>{% if data.status.goal %}{{data.status.goal}}{%endif%}</dd>
+			<dd class='player_assist'>{% if data.status.assist %}{{data.status.assist}}{%endif%}</dd>
 			<dd class='dn'>
+		
+		<img class='player_img {{data.positionNm}}' data-spId={{data.spId}} src=
 		{% if data.imgType %}
-		<img class='player_img {{data.positionNm}}' data-spId={{data.spId}} src="https://fo4.dn.nexoncdn.co.kr/live/externalAssets/common/players/p{{data.imgType}}.png">
-		{% else %}
-		<img class='player_img {{data.positionNm}}' data-spId={{data.spId}} src='https://fo4.dn.nexoncdn.co.kr/live/externalAssets/common/playersAction/p{{data.spId}}.png'>
-		{% endif %}
+		"https://fo4.dn.nexoncdn.co.kr/live/externalAssets/common/players/p{{data.imgType}}.png"
+		{% else %}'https://fo4.dn.nexoncdn.co.kr/live/externalAssets/common/playersAction/p{{data.spId}}.png'
+		{% endif %}>
+		
 			</dd>
 		</dl>
 		{% endfor %}
@@ -51,19 +57,34 @@
 <div id='popup_awayteam' class='squad dn'>
 	<div class='filed sqbox'>
 	{% for data in team2_player %}
-		{% if data.imgType %}
-		<img class='player_img {{data.positionNm}}' data-spId={{data.spId}} src="https://fo4.dn.nexoncdn.co.kr/live/externalAssets/common/players/p{{data.imgType}}.png">
-		{% else %}
-		<img class='player_img {{data.positionNm}}' data-spId={{data.spId}} src='https://fo4.dn.nexoncdn.co.kr/live/externalAssets/common/playersAction/p{{data.spId}}.png'>
+		<div class='player_imgbox   {{data.positionNm}}' background-img="{{data.seasonImg}}" >
+		<img class='player_img' 
+		data-spId='{{data.spId}}'
+		{% if data.status.goal %} 
+			data-goalcnt='{{ data.status.goal }}'
 		{% endif %}
+		{% if data.status.assist %} 
+			data-assist='{{ data.status.assist }}' 
+		{% endif %}
+		src=
+		{% if data.imgType %} 
+			"https://fo4.dn.nexoncdn.co.kr/live/externalAssets/common/players/p{{data.imgType}}.png"
+		{% else %}
+			'https://fo4.dn.nexoncdn.co.kr/live/externalAssets/common/playersAction/p{{data.spId}}.png'
+		{% endif %}
+		>
+		<span class='playerNm'>{{data.name}}</span>
+		</div>
 	{% endfor %}
 	</div>
 	<div class='player_wrap'>
 		<dl class='tit'>
 			<dt class='player_name'>이름</dt>
 			<dt class='player_positionNm'>포지션</dt>
-			<dt class='player_grade'>강화 등급</dd>
+			<dt class='player_grade'>강화</dd>
 			<dt class='player_rate'>평점</dd>
+			<dt class='player_goal'>골</dd>
+			<dt class='player_assist'>어시</dd>
 			<dt class='player_img dn'></dt>
 		</dl>
 		{% for data in team2_player %}
@@ -72,12 +93,15 @@
 			<dd class='player_positionNm'>{{data.positionNm}}</dd>
 			<dd class='player_grade'>{{data.spGrade}}</dd>
 			<dd class='player_rate'>{{data.status.spRating}}</dd>
-			<dd class='dn'>
+			<dd class='player_goal'>{% if data.status.goal %}{{data.status.goal}}{%endif%}</dd>
+			<dd class='player_assist'>{% if data.status.assist %}{{data.status.assist}}{%endif%}</dd>
+			<dd class='player_img dn'>
+		
+		<img class='player_img {{data.positionNm}}' data-spId={{data.spId}} src=
 		{% if data.imgType %}
-		<img class='player_img {{data.positionNm}}' data-spId={{data.spId}} src="https://fo4.dn.nexoncdn.co.kr/live/externalAssets/common/players/p{{data.imgType}}.png">
-		{% else %}
-		<img class='player_img {{data.positionNm}}' data-spId={{data.spId}} src='https://fo4.dn.nexoncdn.co.kr/live/externalAssets/common/playersAction/p{{data.spId}}.png'>
-		{% endif %}
+		"https://fo4.dn.nexoncdn.co.kr/live/externalAssets/common/players/p{{data.imgType}}.png"
+		{% else %}'https://fo4.dn.nexoncdn.co.kr/live/externalAssets/common/playersAction/p{{data.spId}}.png'
+		{% endif %}>
 			</dd>
 		</dl>
 		{% endfor %}

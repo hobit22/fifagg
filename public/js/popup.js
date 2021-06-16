@@ -78,6 +78,9 @@ const layer = {
 	}
 };
 
+
+
+
 $(function() {
 	$(".icon").click(function () {				
 		
@@ -88,32 +91,66 @@ $(function() {
 	
 	$("body").on("click", ".hteam_arrow", function() {
 		console.log("홈팀 화살표클릭");
-		const matchid = Object.values($(this).data())[0];
-		
+		const team = Object.values($(this).data())[0];
+		const matchId = Object.values($(this).data())[1];
+		console.log(team);
+		console.log( matchId);
 		let match = $(".matchInfo");
 		match.removeClass("dn");
 		match.addClass("dn");
-		let hometeam = $("#popup_hometeam");
-		let arrow = $(".arrow");
-		arrow.removeClass("dn");
-		arrow.addClass("dn");
-		hometeam.removeClass("dn");
-		let go_detail= $(".go_detail.right");
-		go_detail.removeClass("dn");
+		
+		$.ajax({
+			url : '/squad?matchId='+matchId+'&team='+team,
+			type : "get",
+			dataType : "html",
+			success : function(res) {
+				console.log(res);
+				$(".squadbox").replaceWith(res);
+				let hometeam = $("#popup_hometeam");
+				let arrow = $(".arrow");
+				arrow.removeClass("dn");
+				arrow.addClass("dn");
+				hometeam.removeClass("dn");
+				let go_detail= $(".go_detail.right");
+				go_detail.removeClass("dn");
+			},
+			error : function(err) {
+				console.error(err);
+			}
+		});
+		
+		
 	});
 	
 	$("body").on("click", ".ateam_arrow", function() {
 		console.log("어웨이팀 화살표클릭");
+		const team = Object.values($(this).data())[0];
+		const matchId = Object.values($(this).data())[1];
+		console.log(team);
+		console.log( matchId);
 		let match = $(".matchInfo");
 		match.removeClass("dn");
 		match.addClass("dn");
-		let awayteam = $("#popup_awayteam");
-		awayteam.removeClass("dn");		
-		let arrow = $(".arrow");
-		arrow.removeClass("dn");
-		arrow.addClass("dn");
-		let go_detail= $(".go_detail.left");
-		go_detail.removeClass("dn");
+		
+		$.ajax({
+			url : '/squad?matchId='+matchId+'&team='+team,
+			type : "get",
+			dataType : "html",
+			success : function(res) {
+				//console.log(res);
+				$(".squadbox").replaceWith(res);
+				let awayteam = $("#popup_awayteam");
+				let arrow = $(".arrow");
+				arrow.removeClass("dn");
+				arrow.addClass("dn");
+				awayteam.removeClass("dn");
+				let go_detail= $(".go_detail.left");
+				go_detail.removeClass("dn");
+			},
+			error : function(err) {
+				console.error(err);
+			}
+		});
 	});
 	
 	$("body").on("click", ".go_detail", function() {
@@ -130,20 +167,12 @@ $(function() {
 		arrow.removeClass("dn");
 	});
 	
-	/*
-	$("body").on("click", ".hteam_arrow", function() {
-		var obj = Object.values($(this).data());
-		var matchId = obj[1];
-		var team = obj[0];
-		const data = {
-			matchId : matchId,
-			team : team.
-		};
-		
-	});
-	*/
 	$("body").on("click", "#layer_dim", function() {
 		layer.close();
+	});
+	
+	$("body").on("hover", ".player_name" ,function(){
+		console.log("호버!");
 	});
 	
 });

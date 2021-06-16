@@ -19,17 +19,17 @@
 
 /** squad */
 .squad {display: table; width:1000px; margin-top:20px;}
-.player_wrap{display:table-cell; width: 480px; float:right;}
+.player_wrap{display:table-cell; width: 490px; float:right;}
 .sqbox {padding : 5px;}
 .player_wrap dl { width: 100%; border-bottom : 1px solid #212121;}
 .player_wrap .tit { font-size: 15px; }
-.player_wrap dt{ width: 20%; text-align: center; border-bottom: 2px solid #212121; border-top: 2px solid #212121;}
-.player_wrap dd{ width: 20%; text-align: center; padding: 7px;}
-.player_wrap .player_name { width: 40%;}
+.player_wrap dt{ width: 13%; text-align: center; border-bottom: 2px solid #212121; border-top: 2px solid #212121;}
+.player_wrap dd{ width: 13%; text-align: center; padding: 7px;}
+.player_wrap .player_name { width: 35%;}
 .player.goal {background-color: #ffa099; font-weight: 500;}
 
-/** filed */
-.filed {background-image:url("/img/filed.jpg"); background-size: cover; position: relative; background-position:center center; background-repeat: no-repeat; width: 480px; height: 668px; display:table-cell; float: left;}
+/** filed and player */
+.filed {background-image:url("/img/filed.jpg"); background-size: cover; position: relative; background-position:center center; background-repeat: no-repeat; width: 490px; height: 668px; display:table-cell; float: left;}
 .filed .player_imgbox {width: 80px; height: 80px; position:absolute; text-align:center;}
 .filed .player_img{width: 100%; height: 100%;}
 .filed .playerNm{text-align:center; background-color: #ffffff; margin-bottom: 10px;}
@@ -70,3 +70,4 @@
 .filed .player_imgbox.RS{top:10px;right: 100px;}
 
 .filed .player_imgbox.SUB{display:none;}
+
