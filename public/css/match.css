@@ -39,7 +39,7 @@ background-repeat: no-repeat;}
 
 .filed .spGrade { position:absolute; top: 80px; left: 4px;}
 .filed .spGrade img{height: 16px;}
-.filed .playerPosition {position:absolute; top: 15px; left: 5px; color: red; font-weight: 500;}
+.filed .playerPosition {position:absolute; top: 15px; left: 3px; color: red; font-weight: 500; width: 20px; height: 16px; font-size: 12px; }
 .filed .name_wrap { position:absolute; top: 105px; padding: 0 2px;}
 .filed .name_wrap:after { display:block; content:''; clear:left;}
 .filed .name_wrap .season{ width :20%; display: inline-block; float: left;}

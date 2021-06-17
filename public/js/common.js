@@ -1,7 +1,6 @@
 
 $(function() {
 	$(".more").click(function () {
-		console.log("더보기 클릭");
 		const match = $(this).closest(".match_wrap").find(".match_summary").last();
 		const nickname = $(this).closest(".data_wrap").find(".accessId").data('accessid');		
 		const id = $(this).closest(".data_wrap").find(".nickname").data('nickname');
@@ -45,7 +44,5 @@ $(function() {
 				console.error(err);
 			}
 		});
-		
-		
 	});
 });
