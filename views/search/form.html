@@ -57,7 +57,7 @@
 		<div class='noData'>경기 기록이 없습니다.</div>
 		{% else %}
 			{% for data in simpledata %}
-				<div class='match_summary {% if data.result == "승"%} win {% elseif data.result =="패" %}lose{% endif %}' data-offset='0' data-limit='10'>
+				<div class='match_summary {% if data.result == "승"%} win {% elseif data.result =="패" %}lose{% endif %}' >
 					<!--<div class='match_result'>{{data.result}}</div>-->
 					<div class='match_date'>{{data.matchDate}}</div>
 					<div class='match'>
@@ -79,7 +79,7 @@
 				</div>
 			{% endfor %}
 			
-			<div class='more'>더보기</div>
+			<div class='more' data-limit='{{ limit }}'>더보기</div>
 		{% endif %}
 	</div><!--match_wrap-->
 </div>

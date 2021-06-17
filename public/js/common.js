@@ -3,34 +3,17 @@ $(function() {
 	$(".more").click(function () {
 		console.log("더보기 클릭");
 		const match = $(this).closest(".match_wrap").find(".match_summary").last();
-		
-		const limit = match.data('limit');
-		const offset = match.data('offset');		
-		const accessId = $(this).closest(".data_wrap").find(".accessId").data('accessid');		
+		const nickname = $(this).closest(".data_wrap").find(".accessId").data('accessid');		
 		const id = $(this).closest(".data_wrap").find(".nickname").data('nickname');
-		//console.log(id);
+		const limit = $(this).data("limit")+10;
 		
 		const data ={
 			limit,
-			offset,
-			accessId,
+			nickname,
 			id,
 		}
-		//console.log(data);
-		$.ajax({
-			url : '/user',
-			type : "post",
-			data : data,
-			dataType : "json",
-			success : function(res) {
-				
-				console.log(res);
-			},
-			error : function(err) {
-				console.error(err);
-			}
-		});
-		
+		const url = "/user?id="+data.id+"&limit="+data.limit;	
+		window.location.href = url;
 	});
 	
 	$("body").on("click", ".hteam_arrow", function() {

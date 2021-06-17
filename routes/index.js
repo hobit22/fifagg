@@ -13,17 +13,17 @@ router.get('/', async (req, res, next) => {
 
 /** form 에 데이터 넘기기 위함 */
 router.route('/user')
-	.get( async (req,res,next) =>{	
-		
+	.get( async (req,res,next) =>{			
 		const id = req.query.id;
+		const limit = req.query.limit || 10 ;
 		let userData = await user.searchNm(id);	
 		
 		const accessId = userData.accessId;
 		const maxdivision = await user.maxdivision(accessId);
-		const matchRecord = await user.matchData(accessId);
+		const matchRecord = await user.matchData(accessId, limit);
 		let simpledata = [];
 		//console.log("record [0] = " , matchRecord[0]);
-		for(let i = 0; i< 10; i++){
+		for(let i = 0; i< limit; i++){
 			sample = await changeData.toSimpleRecord(matchRecord[i] , id );
 			if(sample == false) break;
 			simpledata.push(sample);
@@ -33,8 +33,9 @@ router.route('/user')
 			userData : userData,
 			maxdivision : maxdivision,
 			simpledata : simpledata,
+			limit : limit,
 		};	
-		//console.log(data);
+		
 		if( data.maxdivision ) {
 			data.maxdivision.matchType = await changeData.toMatchType(data.maxdivision.matchType);	
 			data.maxdivision.division = await changeData.toDivision(data.maxdivision.division);	
